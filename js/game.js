@@ -471,6 +471,26 @@ export function patchRules(rt) {
             },
         },
         {
+            name: "patch_look",
+            priority: 0,
+            sourceIndex: nextIdx + 60,
+            conditions: [
+                { cls: "x", isPositional: true, prefixLength: 1, negated: false,
+                  tests: [{ index: 0, op: "eq_const", value: 30 }] },
+                { cls: "place", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "name", op: "eq_var", var: "_loc" }] },
+                { cls: "location", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "name", op: "eq_var", var: "_loc" }] },
+                { cls: "input", isPositional: true, prefixLength: 1, negated: false,
+                  tests: [{ index: 0, op: "eq_const", value: "look" }] },
+            ],
+            action: async (m, wm, term) => {
+                rt.remove(m.$4);
+                rt.modify(m.$2, { visited: null });
+                rt.modify(m.$3, {});
+            },
+        },
+        {
             name: "patch_wine_cellar_desc",
             priority: 0,
             sourceIndex: nextIdx + 3,

@@ -197,6 +197,11 @@ body.no-flicker .screen {
     color: var(--phosphor-bright);
 }
 
+.more-prompt {
+    color: var(--phosphor-bright);
+    animation: blink 1.05s steps(1) infinite;
+}
+
 .prompt-line {
     display: block;
     padding: 0;

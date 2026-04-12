@@ -21,11 +21,22 @@ export class Terminal {
         this.pendingMode = null;
         this.promptVisible = false;
 
+        this._linesSinceInput = 0;
+        this._morePaused = false;
+        this._moreEl = null;
+
         this._bindInput();
     }
 
     _bindInput() {
         document.addEventListener("keydown", (e) => {
+            if (this._morePaused) {
+                if (e.key !== "Shift" && e.key !== "Control" && e.key !== "Alt" && e.key !== "Meta") {
+                    e.preventDefault();
+                    this._dismissMore();
+                }
+                return;
+            }
             if (!this.promptVisible) {
                 if (this.draining && e.key !== "Shift" && e.key !== "Control" && e.key !== "Alt" && e.key !== "Meta") {
                     this.fastForward();
@@ -120,6 +131,7 @@ export class Terminal {
         this.histIdx = -1;
         this.savedDraft = "";
         this.hidePrompt();
+        this._linesSinceInput = 0;
         const resolver = this.pendingResolver;
         this.pendingResolver = null;
         this.pendingMode = null;
@@ -230,7 +242,16 @@ export class Terminal {
                 budget -= take;
             }
             if (item._pos >= item.text.length) {
-                if (item.type === "line") this.currentLine = null;
+                if (item.type === "line") {
+                    this.currentLine = null;
+                    this._linesSinceInput++;
+                    if (!this.fastMode && this.queue.length > 0 &&
+                        this._linesSinceInput >= this._getPageSize()) {
+                        this.queue.shift();
+                        this._showMore();
+                        return;
+                    }
+                }
                 this.queue.shift();
             } else if (take === 0) {
                 break;
@@ -254,5 +275,46 @@ export class Terminal {
 
     setSpeed(cps) {
         this.speed = cps;
+    }
+
+    _getPageSize() {
+        const el = this.outputEl;
+        if (!el) return 24;
+        const style = getComputedStyle(el);
+        const fontSize = parseFloat(style.fontSize) || 22;
+        const lineHeight = parseFloat(style.lineHeight) || fontSize * 1.18;
+        const padTop = parseFloat(style.paddingTop) || 0;
+        const padBottom = parseFloat(style.paddingBottom) || 0;
+        const visible = el.clientHeight - padTop - padBottom;
+        return Math.max(6, Math.floor(visible / lineHeight) - 1);
+    }
+
+    _showMore() {
+        this._morePaused = true;
+        this._moreEl = document.createElement("div");
+        this._moreEl.className = "line more-prompt";
+        this._moreEl.textContent = "[more]";
+        this.outputEl.appendChild(this._moreEl);
+        this._scrollToBottom();
+    }
+
+    _dismissMore() {
+        this._morePaused = false;
+        this._linesSinceInput = 0;
+        if (this._moreEl) {
+            this._moreEl.remove();
+            this._moreEl = null;
+        }
+        if (this.queue.length > 0) {
+            requestAnimationFrame((t) => this._drain(t));
+        } else {
+            this.draining = false;
+            this.fastMode = false;
+            if (this._flushResolver) {
+                const r = this._flushResolver;
+                this._flushResolver = null;
+                r();
+            }
+        }
     }
 }
