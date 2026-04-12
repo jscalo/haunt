@@ -1,0 +1,15 @@
+# Test: experienced player intro path (answer "yes")
+yes
+wait
+wait
+board
+exit bus
+e
+e
+e
+n
+n
+n
+hi
+look
+stop

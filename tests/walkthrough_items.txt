@@ -1,0 +1,34 @@
+# Test: item manipulation — get, drop, inven, errors
+no
+wait
+wait
+board
+exit bus
+e
+e
+e
+n
+n
+n
+hi
+s
+w
+w
+w
+knock
+n
+get candy
+inven
+drop candy
+look
+get candy
+n
+get chair
+inven
+score
+drop chair
+drop candy
+look
+get chair
+get candy
+stop

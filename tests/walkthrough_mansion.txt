@@ -1,0 +1,26 @@
+# Enter mansion, explore, pick up items
+yes
+wait
+wait
+board
+exit bus
+e
+e
+e
+n
+n
+n
+hi
+s
+w
+w
+w
+knock
+n
+get candy
+inven
+n
+get chair
+inven
+score
+stop

@@ -1,0 +1,16 @@
+# Script: navigate the lawn and enter the mansion.
+no
+wait
+wait
+board
+exit bus
+e
+e
+e
+n
+n
+n
+hi
+look
+n
+stop
