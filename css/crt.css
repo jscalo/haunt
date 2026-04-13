@@ -274,6 +274,10 @@ body.no-flicker .screen {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
+.menu[hidden] {
+    display: none;
+}
+
 .menu label {
     display: flex;
     justify-content: space-between;

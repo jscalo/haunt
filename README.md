@@ -4,9 +4,17 @@ A faithful web port of John Laird's **Haunt** (1979-1983), one of the largest OP
 
 This port runs entirely in the browser as a single-page app. No server, no build step, no dependencies.
 
+## Background
+
+I was 9 or 10 when I discovered Haunt on the DEC-10 mainframe that my dad used at the University of Texas @ Austin astronomy department. I was already obsessed with text adventure games like Zork and Colossal Cave Adventure, but Haunt was different. It was irreverent, morbid, and quirky in a way that I'd never seen in a game before and I was hooked.
+
+Fast forward to a few years ago when I wondered if anyone had ever managed to port it to an app or a website. I somehow located the original OPS5 source code for the game but just couldn't figure how to get it ported to something like javascript and eventually gave up.
+
+I hadn't given it much thought since then, but with the advent of agentic coding figured maybe it was worth another shot. Amazingly, with the help of Claude Code I was able to fully and (I _think_) faithfully port it over to javascript, complete with a fun Terminal UI, in about two hours!
+
 ## Play
 
-Open `index.html` in any modern browser, or serve the folder:
+If you just want to play Haunt, go to https://haunt.madebywindmill.com where you'll always find the latest version of the port. Alternatively if you've cloned this repo and want to fiddle with it on your own machine, just open `index.html` in any modern browser, or serve the folder:
 
 ```
 node tools/devserver.mjs
