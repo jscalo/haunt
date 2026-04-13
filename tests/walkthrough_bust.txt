@@ -1,0 +1,24 @@
+# Test: "get bust" in library should not teleport to bus stop
+no
+wait
+wait
+board
+exit bus
+e
+e
+e
+n
+n
+n
+hi
+s
+w
+w
+w
+knock
+n
+n
+e
+get bust
+look
+stop

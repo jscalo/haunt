@@ -491,6 +491,24 @@ export function patchRules(rt) {
             },
         },
         {
+            name: "patch_get_bust",
+            priority: 0,
+            sourceIndex: -2,
+            conditions: [
+                { cls: "location", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "name", op: "eq_const", value: "library" }] },
+                { cls: "input", isPositional: true, prefixLength: 2, negated: false,
+                  tests: [
+                      { index: 0, op: "eq_const", value: "get" },
+                      { index: 1, op: "eq_const", value: "bust" },
+                  ] },
+            ],
+            action: async (m, wm, term) => {
+                rt.remove(m.$2);
+                rt.write("\n", "The bust is too heavy to carry.");
+            },
+        },
+        {
             name: "patch_wine_cellar_desc",
             priority: 0,
             sourceIndex: nextIdx + 3,
