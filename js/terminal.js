@@ -29,6 +29,21 @@ export class Terminal {
     }
 
     _bindInput() {
+        this.inputEl.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                this._submit();
+            } else if (e.key === "ArrowUp") {
+                e.preventDefault();
+                this._historyPrev();
+            } else if (e.key === "ArrowDown") {
+                e.preventDefault();
+                this._historyNext();
+            } else if (e.key === "Tab") {
+                e.preventDefault();
+            }
+        });
+
         document.addEventListener("keydown", (e) => {
             if (this._morePaused) {
                 if (e.key !== "Shift" && e.key !== "Control" && e.key !== "Alt" && e.key !== "Meta") {
@@ -45,20 +60,8 @@ export class Terminal {
             }
             if (document.activeElement !== this.inputEl) {
                 this.inputEl.focus();
-                this._placeCaretAtEnd();
             }
-            if (e.key === "Enter") {
-                e.preventDefault();
-                this._submit();
-            } else if (e.key === "ArrowUp") {
-                e.preventDefault();
-                this._historyPrev();
-            } else if (e.key === "ArrowDown") {
-                e.preventDefault();
-                this._historyNext();
-            } else if (e.key === "Tab") {
-                e.preventDefault();
-            } else if (e.key === "Escape") {
+            if (e.key === "Escape") {
                 this.fastForward();
             } else if (e.key === "l" && (e.ctrlKey || e.metaKey)) {
                 e.preventDefault();
@@ -75,55 +78,77 @@ export class Terminal {
                 .replace(/[^\x20-\x7e]/g, "")
                 .replace(/\s+/g, " ")
                 .slice(0, 80);
-            document.execCommand("insertText", false, cleaned);
+            const el = this.inputEl;
+            const start = el.selectionStart;
+            const end = el.selectionEnd;
+            el.value = el.value.slice(0, start) + cleaned + el.value.slice(end);
+            el.selectionStart = el.selectionEnd = start + cleaned.length;
         });
 
-        document.addEventListener("click", () => {
+        this.screenEl.addEventListener("touchstart", (e) => {
+            if (this._morePaused) {
+                e.preventDefault();
+                this._dismissMore();
+                return;
+            }
+            if (!this.promptVisible && this.draining) {
+                this.fastForward();
+                return;
+            }
             if (this.promptVisible) {
-                this.inputEl.focus();
-                this._placeCaretAtEnd();
+                setTimeout(() => {
+                    this.inputEl.focus();
+                }, 50);
             }
         });
-    }
 
-    _placeCaretAtEnd() {
-        const range = document.createRange();
-        range.selectNodeContents(this.inputEl);
-        range.collapse(false);
-        const sel = window.getSelection();
-        sel.removeAllRanges();
-        sel.addRange(range);
+        document.addEventListener("click", (e) => {
+            if (e.target.closest(".settings")) return;
+            if (this.promptVisible) {
+                this.inputEl.focus();
+            }
+        });
+
+        this.inputEl.addEventListener("focus", () => {
+            setTimeout(() => this._scrollToBottom(), 300);
+        });
+
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener("resize", () => {
+                if (this.promptVisible) {
+                    this._scrollToBottom();
+                }
+            });
+        }
     }
 
     _historyPrev() {
         if (this.history.length === 0) return;
         if (this.histIdx === -1) {
-            this.savedDraft = this.inputEl.textContent;
+            this.savedDraft = this.inputEl.value;
             this.histIdx = this.history.length - 1;
         } else if (this.histIdx > 0) {
             this.histIdx--;
         }
-        this.inputEl.textContent = this.history[this.histIdx];
-        this._placeCaretAtEnd();
+        this.inputEl.value = this.history[this.histIdx];
     }
 
     _historyNext() {
         if (this.histIdx === -1) return;
         if (this.histIdx < this.history.length - 1) {
             this.histIdx++;
-            this.inputEl.textContent = this.history[this.histIdx];
+            this.inputEl.value = this.history[this.histIdx];
         } else {
             this.histIdx = -1;
-            this.inputEl.textContent = this.savedDraft;
+            this.inputEl.value = this.savedDraft;
         }
-        this._placeCaretAtEnd();
     }
 
     _submit() {
-        const raw = this.inputEl.textContent || "";
+        const raw = this.inputEl.value || "";
         const cmd = raw.trim();
         this._freezePrompt(raw);
-        this.inputEl.textContent = "";
+        this.inputEl.value = "";
         if (cmd && (this.history.length === 0 || this.history[this.history.length - 1] !== cmd)) {
             this.history.push(cmd);
             if (this.history.length > 100) this.history.shift();
@@ -147,14 +172,10 @@ export class Terminal {
     }
 
     showPrompt() {
-        // Move the prompt to be the last child of .output so it flows inline
-        // at the end of the scrollback. Re-append each time in case new lines
-        // have been added.
         this.outputEl.appendChild(this.promptLineEl);
         this.promptLineEl.hidden = false;
         this.promptVisible = true;
         this.inputEl.focus();
-        this._placeCaretAtEnd();
         this._scrollToBottom();
     }
 
@@ -171,8 +192,6 @@ export class Terminal {
     }
 
     async readToken() {
-        // (accept) in OPS5 reads a single whitespace-delimited token.
-        // In practice the user still types a line and we take the first word.
         const line = await this.readLine();
         const tok = line.split(/\s+/)[0] || "";
         return tok;
