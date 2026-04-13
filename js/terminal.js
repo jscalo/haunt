@@ -24,6 +24,8 @@ export class Terminal {
         this._linesSinceInput = 0;
         this._morePaused = false;
         this._moreEl = null;
+        this._charDebt = 0;
+        this._lastDrainT = 0;
 
         this._bindInput();
     }
@@ -224,14 +226,17 @@ export class Terminal {
     _startDrain() {
         if (!this.draining) {
             this.draining = true;
-            requestAnimationFrame(() => this._drain(performance.now()));
+            this._lastDrainT = 0;
+            requestAnimationFrame((t) => this._drain(t));
         }
     }
 
-    _drain(lastT) {
+    _drain(frameT) {
         if (this.queue.length === 0) {
             this.draining = false;
             this.fastMode = false;
+            this._charDebt = 0;
+            this._lastDrainT = 0;
             if (this._flushResolver) {
                 const r = this._flushResolver;
                 this._flushResolver = null;
@@ -241,24 +246,30 @@ export class Terminal {
         }
 
         const cps = this.fastMode ? 50000 : this.speed;
-        const now = performance.now();
-        const dt = now - lastT;
-        let budget = Math.max(1, Math.floor((cps * dt) / 1000));
+        const dt = this._lastDrainT ? frameT - this._lastDrainT : 16;
+        this._lastDrainT = frameT;
+        this._charDebt += (cps * dt) / 1000;
+        let budget = Math.floor(this._charDebt);
+        this._charDebt -= budget;
 
-        while (budget > 0 && this.queue.length > 0) {
+        let wrote = false;
+        while (this.queue.length > 0) {
             const item = this.queue[0];
+            const remaining = item.text.length - item._pos;
 
-            if (!this.currentLine) {
+            if (remaining > 0 && budget <= 0) break;
+
+            if (remaining > 0 && !this.currentLine) {
                 this.currentLine = document.createElement("div");
                 this.currentLine.className = "line";
                 this.outputEl.appendChild(this.currentLine);
             }
-            const remaining = item.text.length - item._pos;
             const take = Math.min(remaining, budget);
             if (take > 0) {
                 this.currentLine.textContent += item.text.slice(item._pos, item._pos + take);
                 item._pos += take;
                 budget -= take;
+                wrote = true;
             }
             if (item._pos >= item.text.length) {
                 if (item.type === "line") {
@@ -272,12 +283,12 @@ export class Terminal {
                     }
                 }
                 this.queue.shift();
-            } else if (take === 0) {
+            } else {
                 break;
             }
         }
 
-        this._scrollToBottom();
+        if (wrote) this._scrollToBottom();
         requestAnimationFrame((t) => this._drain(t));
     }
 
@@ -320,6 +331,8 @@ export class Terminal {
     _dismissMore() {
         this._morePaused = false;
         this._linesSinceInput = 0;
+        this._lastDrainT = 0;
+        this._charDebt = 0;
         if (this._moreEl) {
             this._moreEl.remove();
             this._moreEl = null;
