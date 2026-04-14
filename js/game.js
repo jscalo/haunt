@@ -540,6 +540,42 @@ export function patchRules(rt) {
             },
         },
         {
+            name: "patch_pour_on_lawn",
+            priority: 0,
+            sourceIndex: -4,
+            conditions: [
+                { cls: "location", isPositional: false, prefixLength: null, negated: false,
+                  tests: [
+                      { field: "name", op: "eq_const", value: "lawn" },
+                      { field: "side", op: "eq_var", var: "_side" },
+                      { field: "east", op: "eq_var", var: "_east" },
+                      { field: "north", op: "eq_var", var: "_north" },
+                  ] },
+                { cls: "object", isPositional: false, prefixLength: null, negated: false,
+                  tests: [
+                      { field: "name", op: "eq_const", value: "bottle" },
+                      { field: "place", op: "eq_const", value: "held" },
+                  ] },
+                { cls: "object", isPositional: false, prefixLength: null, negated: false,
+                  tests: [
+                      { field: "name", op: "eq_var", var: "_liquid" },
+                      { field: "inside", op: "eq_const", value: "bottle" },
+                  ] },
+                { cls: "input", isPositional: true, prefixLength: 1, negated: false,
+                  tests: [{ index: 0, op: "eq_const", value: "pour" }] },
+            ],
+            action: async (m, wm, term) => {
+                rt.remove(m.$4);
+                rt.modify(m.$3, {
+                    inside: null,
+                    place: "lawn",
+                    side: m._side,
+                    east: m._east,
+                    north: m._north,
+                });
+            },
+        },
+        {
             name: "patch_wine_cellar_desc",
             priority: 0,
             sourceIndex: nextIdx + 3,
