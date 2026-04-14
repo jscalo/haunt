@@ -63,6 +63,7 @@ async function testPourAtGardenSproutsOrchid() {
     wm.make("object", { name: "orchid", place: "lawn", side: "in", east: 3, north: 7, state: "seed" });
     wm.make("input", ["pour"]);
 
+    await fireOnce(engine, "name1086");
     await fireOnce(engine, "patch_pour_on_lawn");
 
     const bathwater = [...wm.all("object")].find(o => o.name === "bathwater");

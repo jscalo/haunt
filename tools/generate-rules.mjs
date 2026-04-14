@@ -800,9 +800,12 @@ function main() {
         if (!split) continue;
         const { conditions, priority, shift } = translateLHS(split.lhs);
         const actionLines = emitAction(split.rhs, { shift });
+        const rulePriority = isLocationDescription(conditions, split.rhs)
+            ? priority + 1
+            : priority;
         rules.push({
             name: split.name,
-            priority,
+            priority: rulePriority,
             sourceIndex: ruleIdx++,
             conditions,
             actionBody: actionLines.join("\n            "),
@@ -814,6 +817,27 @@ function main() {
     writeFileSync(DST, out, "utf8");
     console.error("Wrote " + rules.length + " rules to " + DST);
     console.error("Literalized classes: " + Array.from(literalized).sort().join(", "));
+}
+
+// A "location description" rule emits only (write ...) text and is keyed on
+// the player's location without referring to any specific object/portal/input.
+// These are the "You are in the foyer." / "You are on the west side" style
+// rules. We elevate their priority so they print before item-display rules
+// (which also have location as their first condition and tie on MEA recency).
+function isLocationDescription(conditions, rhs) {
+    const positive = conditions.filter(c => !c.negated);
+    if (positive.length === 0 || positive[0].cls !== "location") return false;
+    for (const cond of positive.slice(1)) {
+        if (cond.cls === "object" || cond.cls === "portal" || cond.cls === "input") {
+            return false;
+        }
+    }
+    for (const form of rhs) {
+        if (form.type !== "list") continue;
+        const head = sym(form.items[0]);
+        if (head && head.toLowerCase() !== "write") return false;
+    }
+    return true;
 }
 
 function preprocessNegation(src) {

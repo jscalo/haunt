@@ -142,6 +142,7 @@ export class Engine {
                     .sort((a, b) => b - a);
                 const specCount = ruleSpecificity(rule);
                 const k = {
+                    priority: rule.priority || 0,
                     firstStamp: domStamp,
                     rest,
                     specificity: specCount,
@@ -252,11 +253,15 @@ function cmpKey(a, b) {
 
 function compareInst(a, b) {
     // MEA conflict resolution:
-    //   1. First-condition recency (higher stamp wins). This implements x-tier
+    //   1. Explicit rule priority (higher wins). Used by the generator to lift
+    //      pure location-description rules above item-display rules that would
+    //      otherwise tie on recency.
+    //   2. First-condition recency (higher stamp wins). This implements x-tier
     //      priority (x=60 > ... > x=0) AND ensures recent-context rules fire first.
-    //   2. Specificity: more condition tests wins.
-    //   3. LEX on remaining stamps.
-    //   4. Source order (lower wins).
+    //   3. Specificity: more condition tests wins.
+    //   4. LEX on remaining stamps.
+    //   5. Source order (lower wins).
+    if (a.priority !== b.priority) return b.priority - a.priority;
     if (a.firstStamp !== b.firstStamp) return b.firstStamp - a.firstStamp;
     if (a.specificity !== b.specificity) return b.specificity - a.specificity;
     const len = Math.max(a.rest.length, b.rest.length);

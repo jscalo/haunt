@@ -242,7 +242,7 @@ export function patchRules(rt) {
         },
         {
             name: "patch_long_hall_desc",
-            priority: 0,
+            priority: 1,
             sourceIndex: nextIdx + 32,
             conditions: [
                 { cls: "location", isPositional: false, prefixLength: null, negated: false,
@@ -577,7 +577,7 @@ export function patchRules(rt) {
         },
         {
             name: "patch_wine_cellar_desc",
-            priority: 0,
+            priority: 1,
             sourceIndex: nextIdx + 3,
             conditions: [
                 { cls: "location", isPositional: false, prefixLength: null, negated: false,
@@ -590,7 +590,7 @@ export function patchRules(rt) {
         },
         {
             name: "patch_dark_room_desc",
-            priority: 0,
+            priority: 1,
             sourceIndex: nextIdx + 4,
             conditions: [
                 { cls: "location", isPositional: false, prefixLength: null, negated: false,
@@ -603,7 +603,7 @@ export function patchRules(rt) {
         },
         {
             name: "patch_dull_room_desc",
-            priority: 0,
+            priority: 1,
             sourceIndex: nextIdx + 5,
             conditions: [
                 { cls: "location", isPositional: false, prefixLength: null, negated: false,

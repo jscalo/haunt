@@ -40,7 +40,7 @@ async function main() {
 
     wm.make("x", [30]);
     wm.make("location", { name: "bathroom" });
-    wm.make("place", { name: "bathroom" });
+    wm.make("place", { name: "bathroom", visited: "t" });
     wm.make("object", { name: "bottle", place: "held" });
     wm.make("status", { score: 0, went: "w", sound: "on" });
     wm.make("time", { realtime: 2200, btime: 2214 });

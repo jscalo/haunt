@@ -4352,7 +4352,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1009",
-            priority: 0,
+            priority: 1,
             sourceIndex: 410,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bus_stop"}]}],
             action: async (m, wm, term) => {
@@ -4383,7 +4383,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1012",
-            priority: 0,
+            priority: 1,
             sourceIndex: 413,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bus_stop"}]},{"cls":"history","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"bus_stopped","op":"eq_const","value":"t"}]}],
             action: async (m, wm, term) => {
@@ -4509,7 +4509,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1023",
-            priority: 0,
+            priority: 1,
             sourceIndex: 424,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bus"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bus"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -4571,7 +4571,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1029",
-            priority: 0,
+            priority: 1,
             sourceIndex: 430,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bus_stop"}]},{"cls":"time","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"realtime","op":"eq_const","value":2226}]}],
             action: async (m, wm, term) => {
@@ -4790,7 +4790,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1051",
-            priority: 0,
+            priority: 1,
             sourceIndex: 452,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"out"},{"field":"east","op":"in_set","set":[3,4,5,6,7]},{"field":"north","op":"eq_const","value":8}]}],
             action: async (m, wm, term) => {
@@ -4799,7 +4799,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1053",
-            priority: 0,
+            priority: 1,
             sourceIndex: 453,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"out"},{"field":"east","op":"in_set","set":[3,4,5,6,7]},{"field":"north","op":"eq_const","value":2}]}],
             action: async (m, wm, term) => {
@@ -4809,7 +4809,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1055",
-            priority: 0,
+            priority: 1,
             sourceIndex: 454,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"out"},{"field":"north","op":"in_set","set":[3,4,5,6,7]},{"field":"east","op":"eq_const","value":2}]}],
             action: async (m, wm, term) => {
@@ -4818,7 +4818,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1056",
-            priority: 0,
+            priority: 1,
             sourceIndex: 455,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"out"},{"field":"east","op":"eq_const","value":8},{"field":"north","op":"in_set","set":[3,4,5,6,7]}]}],
             action: async (m, wm, term) => {
@@ -4847,7 +4847,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1074",
-            priority: 0,
+            priority: 1,
             sourceIndex: 458,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"out"},{"field":"north","op":"eq_const","value":1}]}],
             action: async (m, wm, term) => {
@@ -4856,7 +4856,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1075",
-            priority: 0,
+            priority: 1,
             sourceIndex: 459,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"out"},{"field":"east","op":"eq_const","value":1},{"field":"north","op":"cmp","cmp":">","value":1}]}],
             action: async (m, wm, term) => {
@@ -4865,7 +4865,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1098",
-            priority: 0,
+            priority: 1,
             sourceIndex: 460,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"out"},{"field":"east","op":"eq_const","value":5},{"field":"north","op":"eq_const","value":2}]}],
             action: async (m, wm, term) => {
@@ -4878,7 +4878,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1114",
-            priority: 0,
+            priority: 1,
             sourceIndex: 461,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"out"},{"field":"east","op":"eq_const","value":2},{"field":"north","op":"eq_const","value":2}]}],
             action: async (m, wm, term) => {
@@ -4887,7 +4887,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1115",
-            priority: 0,
+            priority: 1,
             sourceIndex: 462,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"out"},{"field":"east","op":"eq_const","value":8},{"field":"north","op":"eq_const","value":2}]}],
             action: async (m, wm, term) => {
@@ -4896,7 +4896,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1116",
-            priority: 0,
+            priority: 1,
             sourceIndex: 463,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"out"},{"field":"east","op":"eq_const","value":8},{"field":"north","op":"eq_const","value":8}]}],
             action: async (m, wm, term) => {
@@ -4905,7 +4905,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1117",
-            priority: 0,
+            priority: 1,
             sourceIndex: 464,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"out"},{"field":"east","op":"eq_const","value":2},{"field":"north","op":"eq_const","value":8}]}],
             action: async (m, wm, term) => {
@@ -5014,7 +5014,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1052",
-            priority: 0,
+            priority: 1,
             sourceIndex: 475,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"north","op":"eq_const","value":8}]}],
             action: async (m, wm, term) => {
@@ -5023,7 +5023,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1054",
-            priority: 0,
+            priority: 1,
             sourceIndex: 476,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"north","op":"eq_const","value":2}]}],
             action: async (m, wm, term) => {
@@ -5032,7 +5032,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1057",
-            priority: 0,
+            priority: 1,
             sourceIndex: 477,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":8}]}],
             action: async (m, wm, term) => {
@@ -5041,7 +5041,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1058",
-            priority: 0,
+            priority: 1,
             sourceIndex: 478,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":2}]}],
             action: async (m, wm, term) => {
@@ -5070,7 +5070,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1063",
-            priority: 0,
+            priority: 1,
             sourceIndex: 481,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":4},{"field":"north","op":"eq_const","value":4}]}],
             action: async (m, wm, term) => {
@@ -5079,7 +5079,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1064",
-            priority: 0,
+            priority: 1,
             sourceIndex: 482,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":6},{"field":"north","op":"eq_const","value":4}]}],
             action: async (m, wm, term) => {
@@ -5088,7 +5088,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1065",
-            priority: 0,
+            priority: 1,
             sourceIndex: 483,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":4},{"field":"north","op":"eq_const","value":5}]}],
             action: async (m, wm, term) => {
@@ -5097,7 +5097,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1066",
-            priority: 0,
+            priority: 1,
             sourceIndex: 484,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":4},{"field":"north","op":"eq_const","value":6}]}],
             action: async (m, wm, term) => {
@@ -5106,7 +5106,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1067",
-            priority: 0,
+            priority: 1,
             sourceIndex: 485,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":5},{"field":"north","op":"eq_const","value":6}]}],
             action: async (m, wm, term) => {
@@ -5115,7 +5115,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1068",
-            priority: 0,
+            priority: 1,
             sourceIndex: 486,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":6},{"field":"north","op":"eq_const","value":6}]}],
             action: async (m, wm, term) => {
@@ -5124,7 +5124,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1069",
-            priority: 0,
+            priority: 1,
             sourceIndex: 487,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":6},{"field":"north","op":"eq_const","value":5}]}],
             action: async (m, wm, term) => {
@@ -5263,7 +5263,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1086",
-            priority: 0,
+            priority: 1,
             sourceIndex: 502,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":3},{"field":"north","op":"eq_const","value":7}]}],
             action: async (m, wm, term) => {
@@ -5342,7 +5342,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1094",
-            priority: 0,
+            priority: 1,
             sourceIndex: 510,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"general","op":"eq_const","value":"lawns"}]}],
             action: async (m, wm, term) => {
@@ -5351,7 +5351,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1095",
-            priority: 0,
+            priority: 1,
             sourceIndex: 511,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":5},{"field":"north","op":"eq_const","value":3}]}],
             action: async (m, wm, term) => {
@@ -5360,7 +5360,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1096",
-            priority: 0,
+            priority: 1,
             sourceIndex: 512,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":5},{"field":"north","op":"eq_const","value":2}]}],
             action: async (m, wm, term) => {
@@ -5380,7 +5380,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1105",
-            priority: 0,
+            priority: 1,
             sourceIndex: 514,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":7},{"field":"north","op":"eq_const","value":5}]}],
             action: async (m, wm, term) => {
@@ -5390,7 +5390,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1106",
-            priority: 0,
+            priority: 1,
             sourceIndex: 515,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":7},{"field":"north","op":"eq_const","value":6}]}],
             action: async (m, wm, term) => {
@@ -5512,7 +5512,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1129",
-            priority: 0,
+            priority: 1,
             sourceIndex: 527,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":5},{"field":"north","op":"eq_const","value":6}]}],
             action: async (m, wm, term) => {
@@ -5590,7 +5590,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name500",
-            priority: 0,
+            priority: 1,
             sourceIndex: 535,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":8},{"field":"north","op":"eq_const","value":8}]},{"cls":"history","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"grave_status","op":"eq_const","value":"undug"}]}],
             action: async (m, wm, term) => {
@@ -5610,7 +5610,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name502",
-            priority: 0,
+            priority: 1,
             sourceIndex: 537,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":8},{"field":"north","op":"eq_const","value":8}]},{"cls":"history","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"grave_status","op":"eq_const","value":"dug"}]}],
             action: async (m, wm, term) => {
@@ -5629,7 +5629,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name504",
-            priority: 0,
+            priority: 1,
             sourceIndex: 539,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":8},{"field":"north","op":"eq_const","value":8}]},{"cls":"history","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"grave_status","op":"eq_const","value":"deep"}]}],
             action: async (m, wm, term) => {
@@ -5672,7 +5672,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name508",
-            priority: 0,
+            priority: 1,
             sourceIndex: 543,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":8},{"field":"north","op":"eq_const","value":8}]},{"cls":"history","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"grave_status2","op":"eq_const","value":"oil"}]}],
             action: async (m, wm, term) => {
@@ -5871,7 +5871,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name530",
-            priority: 0,
+            priority: 1,
             sourceIndex: 563,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":8},{"field":"north","op":"eq_const","value":5}]},{"cls":"enter","isPositional":true,"prefixLength":0,"negated":false,"tests":[]}],
             action: async (m, wm, term) => {
@@ -6213,7 +6213,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1132",
-            priority: 0,
+            priority: 1,
             sourceIndex: 593,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":8},{"field":"north","op":"eq_const","value":5}]}],
             action: async (m, wm, term) => {
@@ -6233,7 +6233,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1134",
-            priority: 0,
+            priority: 1,
             sourceIndex: 595,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"out"},{"field":"east","op":"eq_const","value":8},{"field":"north","op":"eq_const","value":5}]}],
             action: async (m, wm, term) => {
@@ -6273,7 +6273,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1201",
-            priority: 0,
+            priority: 1,
             sourceIndex: 598,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"balcony"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"balcony"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -6418,7 +6418,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1214",
-            priority: 0,
+            priority: 1,
             sourceIndex: 611,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bedroom"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bedroom"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -6491,7 +6491,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1221",
-            priority: 0,
+            priority: 1,
             sourceIndex: 618,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bedroom"}]},{"cls":"status","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"sound","op":"eq_const","value":"on"}]}],
             action: async (m, wm, term) => {
@@ -6509,7 +6509,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1223",
-            priority: 0,
+            priority: 1,
             sourceIndex: 620,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bedroom"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":true,"tests":[{"field":"name","op":"eq_const","value":"mattress"},{"field":"place","op":"eq_const","value":"bedroom"}]}],
             action: async (m, wm, term) => {
@@ -6644,7 +6644,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1236",
-            priority: 0,
+            priority: 1,
             sourceIndex: 633,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bedroom"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":true,"tests":[{"field":"name","op":"eq_const","value":"mirror"},{"field":"state","op":"eq_const","value":"broke"}]}],
             action: async (m, wm, term) => {
@@ -6744,7 +6744,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1246",
-            priority: 0,
+            priority: 1,
             sourceIndex: 643,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bathroom"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bathroom"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -6963,7 +6963,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1267",
-            priority: 0,
+            priority: 1,
             sourceIndex: 664,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bathroom"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bathroom"},{"field":"state","op":"eq_const","value":"water_running"}]}],
             action: async (m, wm, term) => {
@@ -7250,7 +7250,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1294",
-            priority: 0,
+            priority: 1,
             sourceIndex: 691,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"backroom"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"backroom"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -7396,7 +7396,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2008",
-            priority: 0,
+            priority: 1,
             sourceIndex: 705,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":5},{"field":"north","op":"eq_const","value":4}]}],
             action: async (m, wm, term) => {
@@ -7459,7 +7459,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2014",
-            priority: 0,
+            priority: 1,
             sourceIndex: 711,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":5},{"field":"north","op":"eq_const","value":4}]},{"cls":"status","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"sound","op":"eq_const","value":"on"}]}],
             action: async (m, wm, term) => {
@@ -7468,7 +7468,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2015",
-            priority: 0,
+            priority: 1,
             sourceIndex: 712,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"foyer"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"foyer"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -7601,7 +7601,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2027",
-            priority: 0,
+            priority: 1,
             sourceIndex: 724,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"foyer"}]},{"cls":"status","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"sound","op":"eq_const","value":"on"}]}],
             action: async (m, wm, term) => {
@@ -7621,7 +7621,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2029",
-            priority: 0,
+            priority: 1,
             sourceIndex: 726,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"main_hall"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"main_hall"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -7677,7 +7677,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2034",
-            priority: 0,
+            priority: 1,
             sourceIndex: 731,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"main_hall"}]},{"cls":"status","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"sound","op":"eq_const","value":"on"}]}],
             action: async (m, wm, term) => {
@@ -7697,7 +7697,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2036",
-            priority: 0,
+            priority: 1,
             sourceIndex: 733,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"closet"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"closet"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -7707,7 +7707,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2037",
-            priority: 0,
+            priority: 1,
             sourceIndex: 734,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"dark_hall"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"dark_hall"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -7738,7 +7738,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2040",
-            priority: 0,
+            priority: 1,
             sourceIndex: 737,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stairs"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stairs"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -7750,7 +7750,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2041",
-            priority: 0,
+            priority: 1,
             sourceIndex: 738,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stairs"}]},{"cls":"status","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"sound","op":"eq_const","value":"on"}]}],
             action: async (m, wm, term) => {
@@ -7781,7 +7781,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2045",
-            priority: 0,
+            priority: 1,
             sourceIndex: 741,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stairs"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stairs"},{"field":"visited","op":"eq_const","value":"t"}]}],
             action: async (m, wm, term) => {
@@ -7802,7 +7802,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2047",
-            priority: 0,
+            priority: 1,
             sourceIndex: 743,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"smelly_room"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"smelly_room"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -7824,7 +7824,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2049",
-            priority: 0,
+            priority: 1,
             sourceIndex: 745,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"library"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"library"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -7991,7 +7991,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2065",
-            priority: 0,
+            priority: 1,
             sourceIndex: 761,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"secret_stairs"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"secret_stairs"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -8052,7 +8052,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2071",
-            priority: 0,
+            priority: 1,
             sourceIndex: 767,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stairs_debris"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stairs_debris"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -8084,7 +8084,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2074",
-            priority: 0,
+            priority: 1,
             sourceIndex: 770,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"back_hall"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"back_hall"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -8136,7 +8136,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2079",
-            priority: 0,
+            priority: 1,
             sourceIndex: 775,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"kitchen"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"kitchen"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -8238,7 +8238,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2089",
-            priority: 0,
+            priority: 1,
             sourceIndex: 785,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"kitchen"},{"field":"ontop","op":"eq_const","value":"frig"}]}],
             action: async (m, wm, term) => {
@@ -8269,7 +8269,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2092",
-            priority: 0,
+            priority: 1,
             sourceIndex: 788,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"dining_room"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"dining"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -8290,7 +8290,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2094",
-            priority: 0,
+            priority: 1,
             sourceIndex: 790,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"upper_hall"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"upper_hall"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -8405,7 +8405,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2104",
-            priority: 0,
+            priority: 1,
             sourceIndex: 800,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"upper_hall"}]},{"cls":"status","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"sound","op":"eq_const","value":"on"}]}],
             action: async (m, wm, term) => {
@@ -8414,7 +8414,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2105",
-            priority: 0,
+            priority: 1,
             sourceIndex: 801,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"laboratory"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"laboratory"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"laboratory"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -8448,7 +8448,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2108",
-            priority: 0,
+            priority: 1,
             sourceIndex: 804,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"laboratory"}]},{"cls":"wall","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"is"},{"index":1,"op":"eq_const","value":"down"}]}],
             action: async (m, wm, term) => {
@@ -8730,7 +8730,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2134",
-            priority: 0,
+            priority: 1,
             sourceIndex: 830,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bar"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bar"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bar"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
@@ -8750,7 +8750,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name2136",
-            priority: 0,
+            priority: 1,
             sourceIndex: 832,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"wine_racks"}]}],
             action: async (m, wm, term) => {
