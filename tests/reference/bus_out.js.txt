@@ -114,77 +114,13 @@ the gate is inoperable, and you won't be able to open it.
 *
 to the north is the wall that surrounds chez moose.
 to the south is a road.
-*
-to the north is the wall that surrounds chez moose.
-to the south is a road.
-*
-this is the se corner of the wall. you can go n, s, e or w.
-*
-to the east is a dark forest, and to the west is a high wall.
-*
-to the east is a dark forest, and to the west is a high wall.
-*
-to the east is a dark forest, and to the west is a high wall.
-there is a gate in the wall that spans the
-driveway that leads into the inner grounds of the mansion.
-by the left hand side of the gate is a 'jack-in-the-box'
-speaker with a button.
-*
-'zzzzzzz crackle zzzzzzzzz'
-*
-'zzzzzzzz, snort snort zzzzzzz'
-*
-'meep, zzzz, go away!! leave me alone!, zzzt'
-*
-'alright, alright. stop pressing that damn buzzer!'
-'there is a microphone there so i can hear anything you say.'
-'how did you get here, on that stupid bus?'
-*
-'i thought so. mumble. i suppose you think you can survive
-in chez moose for a night without going crazy and find mucho treasure?'
-*
-'so i guess you want to come in the gate, don't you?'
-*
-'in order for you to enter you must first answer three questions!'
-'first, what is your name?'
-*
-'second, which sex (male, female, ...) interests you sexually'
-*
-'your mother would faint if she knew that.'
-'what was the first production system with more than 1500 productions?'
-*
-correct!!
-the gate opens. you rush in and then it closes behind you.
-out of the speaker you hear, 'now you are in, but will you ever get out?'
-'i'll take that gold token you've got there.'
-'chomp! yep these old teeth left a mark in it.'
-'maybe next time you'll be smart enough to test it yourself.'
-you are on the driveway. the gate to the outside
-is to the east, but is locked electronically.
-to the east is a wall.
-*
-to the east is a wall.
-*
-the wall is in the way.
-*
-the wall is in the way.
-*
-the wall is in the way.
-*
-to the east is a wall.
-*
-there is a fresh grave here.
-you're on the inside of north border of a wall.
-to the east is a wall.
-*
-luckily, the dirt is soft.
-there is a open grave.
-there is a bone here that you identify as from the missing link!
-*
-there is a large pipe that goes through the grave.
-there is a lever on the pipe labelled 'emergency release.'
+to the north is a gate in a wall.
+further north a huge mansion looms.
+
+lights from inside illuminate the surrounding estate.
+the gate is inoperable, and you won't be able to open it.
 *
 the party's over.
-your final score is 5
+your final score is 0
 the total possible is 440
 hmm... i don't think you tried very hard.

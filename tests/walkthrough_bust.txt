@@ -3,14 +3,23 @@ no
 wait
 wait
 board
-exit bus
+out
 e
 e
 e
 n
 n
 n
-hi
+press button
+press button
+press button
+press button
+yes
+yes
+yes
+claude
+none
+haunt
 s
 w
 w

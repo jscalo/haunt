@@ -602,6 +602,180 @@ export function patchRules(rt) {
             },
         },
         {
+            name: "patch_stairs_debris_up",
+            priority: 0,
+            sourceIndex: nextIdx + 36,
+            conditions: [
+                { cls: "location", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "name", op: "eq_const", value: "stairs_debris" }] },
+                { cls: "status", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "going", op: "eq_const", value: "u" }] },
+            ],
+            action: async (m, wm, term) => {
+                rt.write("\n", "You clamber up the wreckage to the upper hall.");
+                rt.modify(m.$1, { name: "upper_hall" });
+                rt.modify(m.$2, { going: null });
+            },
+        },
+        {
+            name: "patch_kick_football_lab",
+            priority: 2,
+            sourceIndex: nextIdx + 72,
+            conditions: [
+                { cls: "location", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "name", op: "eq_const", value: "laboratory" }] },
+                { cls: "object", isPositional: false, prefixLength: null, negated: false,
+                  tests: [
+                      { field: "name", op: "eq_const", value: "football" },
+                      { field: "place", op: "eq_const", value: "held" },
+                  ] },
+                { cls: "input", isPositional: true, prefixLength: 2, negated: false,
+                  tests: [
+                      { index: 0, op: "eq_const", value: "kick" },
+                      { index: 1, op: "eq_const", value: "football" },
+                  ] },
+            ],
+            action: async (m, wm, term) => {
+                rt.remove(m.$3);
+                rt.write("\n", "The football goes crashing through the glass dome.");
+                rt.modify(m.$2, { place: "lawn", side: "in", east: 7, north: 4 });
+                rt.make("object", { name: "dome", state: "broken" });
+            },
+        },
+        {
+            name: "patch_disable_madness",
+            priority: 3,
+            sourceIndex: nextIdx + 75,
+            conditions: [
+                { cls: "time", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "orc_status", op: "in_set", set: ["sweat", "dizzy", "mad", "suicide"] }] },
+            ],
+            action: async (m, wm, term) => {
+                rt.modify(m.$1, { orc_status: null, orc_time: null });
+            },
+        },
+        {
+            name: "patch_get_orchid",
+            priority: 2,
+            sourceIndex: nextIdx + 74,
+            conditions: [
+                { cls: "location", isPositional: false, prefixLength: null, negated: false,
+                  tests: [
+                      { field: "name", op: "eq_const", value: "lawn" },
+                      { field: "side", op: "eq_const", value: "in" },
+                      { field: "east", op: "eq_const", value: "3" },
+                      { field: "north", op: "eq_const", value: "7" },
+                  ] },
+                { cls: "object", isPositional: false, prefixLength: null, negated: false,
+                  tests: [
+                      { field: "name", op: "eq_const", value: "orchid" },
+                      { field: "state", op: "eq_const", value: "plant" },
+                  ] },
+                { cls: "input", isPositional: true, prefixLength: 2, negated: false,
+                  tests: [
+                      { index: 0, op: "eq_const", value: "get" },
+                      { index: 1, op: "eq_const", value: "orchid" },
+                  ] },
+            ],
+            action: async (m, wm, term) => {
+                rt.remove(m.$3);
+                rt.modify(m.$2, { place: "held", side: null, east: null, north: null, state: null, treasure: "t" });
+                rt.write("\n", "You pick the orchid.");
+            },
+        },
+        {
+            name: "patch_dracula_to_lab",
+            priority: 0,
+            sourceIndex: nextIdx + 73,
+            conditions: [
+                { cls: "object", isPositional: false, prefixLength: null, negated: false,
+                  tests: [
+                      { field: "name", op: "eq_const", value: "Dracula" },
+                      { field: "place", op: "neq_const", value: "laboratory" },
+                  ] },
+                { cls: "object", isPositional: false, prefixLength: null, negated: false,
+                  tests: [
+                      { field: "name", op: "eq_const", value: "dome" },
+                      { field: "state", op: "eq_const", value: "broken" },
+                  ] },
+                { cls: "time", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "morning", op: "eq_const", value: "t" }] },
+            ],
+            action: async (m, wm, term) => {
+                rt.modify(m.$1, { place: "laboratory", asleep: null });
+            },
+        },
+        {
+            name: "patch_force_morning",
+            priority: 0,
+            sourceIndex: nextIdx + 71,
+            conditions: [
+                { cls: "time", isPositional: false, prefixLength: null, negated: false,
+                  tests: [
+                      { field: "realtime", op: "cmp", cmp: ">", value: 2300 },
+                      { field: "morning", op: "neq_const", value: "t" },
+                  ] },
+            ],
+            action: async (m, wm, term) => {
+                rt.modify(m.$1, { morning: "t" });
+                rt.write("\n", "'Cock-a-doodle-do'.  You hear a rooster crow.");
+            },
+        },
+        {
+            name: "patch_spawn_football",
+            priority: 0,
+            sourceIndex: nextIdx + 70,
+            conditions: [
+                { cls: "history", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "football_spawned", op: "neq_const", value: "t" }] },
+            ],
+            action: async (m, wm, term) => {
+                rt.make("object", { name: "football", place: "main_hall" });
+                rt.modify(m.$1, { football_spawned: "t" });
+            },
+        },
+        {
+            name: "patch_bus_out",
+            priority: 0,
+            sourceIndex: nextIdx + 6,
+            conditions: [
+                { cls: "input", isPositional: true, prefixLength: 1, negated: false,
+                  tests: [{ index: 0, op: "eq_const", value: "out" }] },
+                { cls: "location", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "name", op: "eq_const", value: "bus" }] },
+            ],
+            action: async (m, wm, term) => {
+                rt.remove(m.$1);
+                rt.modify(m.$2, { name: "lawn", side: "out", east: 5, north: 2 });
+                rt.write("\n", "The bus drives off as you get off.");
+            },
+        },
+        // === East-gate entry: button + dialog + trivia (binary fidelity) ===
+        // State lives in history.gate_state ("", "await_bus", "await_survive",
+        // "await_want_in", "await_name", "await_sex", "await_trivia", "done").
+        // Press count lives in history.gate_presses (nil → "1" → ... → "4").
+        ...gateEntryPatches(rt, nextIdx),
+        {
+            name: "patch_dhi_disabled",
+            priority: 2,
+            sourceIndex: nextIdx + 99,
+            conditions: [
+                { cls: "input", isPositional: true, prefixLength: 1, negated: false,
+                  tests: [{ index: 0, op: "eq_const", value: "hi" }] },
+                { cls: "location", isPositional: false, prefixLength: null, negated: false,
+                  tests: [
+                      { field: "name", op: "eq_const", value: "lawn" },
+                      { field: "side", op: "eq_const", value: "out" },
+                      { field: "east", op: "eq_const", value: 8 },
+                      { field: "north", op: "eq_const", value: 5 },
+                  ] },
+            ],
+            action: async (m, wm, term) => {
+                rt.remove(m.$1);
+                rt.write("\n", "The speaker doesn't seem to respond to that. Try the button.");
+            },
+        },
+        {
             name: "patch_dull_room_desc",
             priority: 1,
             sourceIndex: nextIdx + 5,
@@ -612,6 +786,193 @@ export function patchRules(rt) {
             action: async (m, wm, term) => {
                 rt.write("\n", "You are in an uninteresting room. Dust covers everything.");
                 rt.write("\n", "The exit is to the south.");
+            },
+        },
+    ];
+}
+
+const EAST_GATE_LOC = { cls: "location", isPositional: false, prefixLength: null, negated: false,
+    tests: [
+        { field: "name", op: "eq_const", value: "lawn" },
+        { field: "side", op: "eq_const", value: "out" },
+        { field: "east", op: "eq_const", value: 8 },
+        { field: "north", op: "eq_const", value: 5 },
+    ] };
+
+function kickToBusStop(rt, loc, hist, msg) {
+    if (msg) rt.write("\n", msg);
+    rt.modify(loc, { name: "bus_stop", side: null, east: null, north: null });
+    rt.modify(hist, { gate_state: null, gate_presses: null, bus_stopped: "nil" });
+}
+
+function gateEntryPatches(rt, nextIdx) {
+    const pressRule = (n, prevPresses, text, stateUpdate = {}) => ({
+        name: `patch_gate_press_${n}`,
+        priority: 5,
+        sourceIndex: nextIdx + 80 + n,
+        conditions: [
+            { cls: "input", isPositional: true, prefixLength: 2, negated: false,
+              tests: [
+                  { index: 0, op: "in_set", set: ["press", "push"] },
+                  { index: 1, op: "eq_const", value: "button" },
+              ] },
+            EAST_GATE_LOC,
+            { cls: "history", isPositional: false, prefixLength: null, negated: false,
+              tests: [{ field: "gate_presses", op: "eq_const", value: prevPresses }] },
+        ],
+        action: async (m, wm, term) => {
+            rt.remove(m.$1);
+            rt.modify(m.$3, { gate_presses: String(n), ...stateUpdate });
+            for (const line of text) rt.write("\n", line);
+        },
+    });
+
+    const dialogRule = (name, stateWhen, inputTest, action) => ({
+        name: `patch_gate_${name}`,
+        priority: 5,
+        sourceIndex: nextIdx + 90 + name.charCodeAt(0),
+        conditions: [
+            inputTest,
+            { cls: "history", isPositional: false, prefixLength: null, negated: false,
+              tests: [{ field: "gate_state", op: "eq_const", value: stateWhen }] },
+            { cls: "location", isPositional: false, prefixLength: null, negated: false,
+              tests: [{ field: "name", op: "eq_var", var: "__loc" }] },
+        ],
+        action,
+    });
+
+    const yesInput = { cls: "input", isPositional: true, prefixLength: 1, negated: false,
+        tests: [{ index: 0, op: "in_set", set: ["yes", "y"] }] };
+    const noInput = { cls: "input", isPositional: true, prefixLength: 1, negated: false,
+        tests: [{ index: 0, op: "in_set", set: ["no", "n"] }] };
+    const anyInput = { cls: "input", isPositional: true, prefixLength: 1, negated: false, tests: [] };
+    const trivInput = { cls: "input", isPositional: true, prefixLength: 1, negated: false,
+        tests: [{ index: 0, op: "eq_const", value: "haunt" }] };
+
+    return [
+        // --- Press 1..3: progressive wake-up sounds ---
+        pressRule(1, "nil", ["'ZZZZZZZ CracKLe ZZZZZZZZZ'"]),
+        pressRule(2, "1", ["'ZZZZZZZZ, snort snort ZZZZZZZ'"]),
+        pressRule(3, "2", ["'Meep, ZZzz, Go AWAY!!  Leave me alone!, ZZZT'"]),
+        // --- Press 4: attendant wakes and opens dialog ---
+        pressRule(4, "3", [
+            "'Alright, alright.  Stop pressing that damn buzzer!'",
+            "'There is a microphone there so I can hear anything you say.'",
+            "'How did you get here, on that stupid bus?'",
+        ], { gate_state: "await_bus" }),
+        // --- Press 5: punishment — teleport to bus stop ---
+        {
+            name: "patch_gate_press_5",
+            priority: 5,
+            sourceIndex: nextIdx + 86,
+            conditions: [
+                { cls: "input", isPositional: true, prefixLength: 2, negated: false,
+                  tests: [
+                      { index: 0, op: "in_set", set: ["press", "push"] },
+                      { index: 1, op: "eq_const", value: "button" },
+                  ] },
+                EAST_GATE_LOC,
+                { cls: "history", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "gate_presses", op: "eq_const", value: "4" }] },
+            ],
+            action: async (m, wm, term) => {
+                rt.remove(m.$1);
+                rt.write("\n", "'That's it!! You've pressed my buzzer once too often.'");
+                rt.write("\n", "'I guess you must love that bus stop.'");
+                kickToBusStop(rt, m.$2, m.$3);
+            },
+        },
+        // --- Dialog Q1: "got here by bus?" ---
+        dialogRule("q1_yes", "await_bus", yesInput, async (m) => {
+            rt.remove(m.$1);
+            rt.modify(m.$2, { gate_state: "await_survive" });
+            rt.write("\n", "'I thought so. Mumble. I suppose you think you can survive");
+            rt.write("\n", "in Chez Moose for a night without going crazy and find mucho treasure?'");
+        }),
+        dialogRule("q1_no", "await_bus", noInput, async (m) => {
+            rt.remove(m.$1);
+            kickToBusStop(rt, m.$3, m.$2, "'Then how did you get here? Bah! Go away.'");
+        }),
+        // --- Dialog Q2: "survive Chez Moose?" ---
+        dialogRule("q2_yes", "await_survive", yesInput, async (m) => {
+            rt.remove(m.$1);
+            rt.modify(m.$2, { gate_state: "await_want_in" });
+            rt.write("\n", "'So I guess you want to come in the gate, don't you?'");
+        }),
+        dialogRule("q2_no", "await_survive", noInput, async (m) => {
+            rt.remove(m.$1);
+            kickToBusStop(rt, m.$3, m.$2, "'Smart turkey. Go home.'");
+        }),
+        // --- Dialog Q3: "want to come in?" ---
+        dialogRule("q3_yes", "await_want_in", yesInput, async (m) => {
+            rt.remove(m.$1);
+            rt.modify(m.$2, { gate_state: "await_name" });
+            rt.write("\n", "'In order for you to enter you must first answer three questions!'");
+            rt.write("\n", "'First, what is your name?'");
+        }),
+        dialogRule("q3_no", "await_want_in", noInput, async (m) => {
+            rt.remove(m.$1);
+            kickToBusStop(rt, m.$3, m.$2,
+                "'Then leave me alone, you turkey.  Good night!!  Enjoy the bus stop.'");
+        }),
+        // --- Admission Q1: name (any input accepted) ---
+        dialogRule("q_name", "await_name", anyInput, async (m) => {
+            rt.remove(m.$1);
+            rt.modify(m.$2, { gate_state: "await_sex" });
+            rt.write("\n", "'Second, which sex (male, female, ...) interests you sexually'");
+        }),
+        // --- Admission Q2: sex (any input) ---
+        dialogRule("q_sex", "await_sex", anyInput, async (m) => {
+            rt.remove(m.$1);
+            rt.modify(m.$2, { gate_state: "await_trivia" });
+            rt.write("\n", "'Your mother would faint if she knew that.'");
+            rt.write("\n", "'What was the first production system with more than 1500 productions?'");
+        }),
+        // --- Admission Q3: trivia. Correct answer: haunt ---
+        {
+            name: "patch_gate_trivia_right",
+            priority: 6,
+            sourceIndex: nextIdx + 100,
+            conditions: [
+                trivInput,
+                { cls: "history", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "gate_state", op: "eq_const", value: "await_trivia" }] },
+                { cls: "location", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "name", op: "eq_const", value: "lawn" }] },
+            ],
+            action: async (m, wm, term) => {
+                rt.remove(m.$1);
+                rt.modify(m.$2, { gate_state: "done" });
+                rt.modify(m.$3, { side: "in" });
+                rt.write("\n", "Correct!!");
+                rt.write("\n", "The gate opens.  You rush in and then it closes behind you.");
+                rt.write("\n", "Out of the speaker you hear, 'Now you are in, but will you ever get out?'");
+                const tokens = [...(wm.classes.get("object")?.values() ?? [])]
+                    .filter(o => (o.name === "token" || o.name === "tokens") && o.place === "held");
+                for (const t of tokens) {
+                    rt.write("\n", "'I'll take that gold token you've got there.'");
+                    rt.write("\n", "'CHOMP!  Yep these old teeth left a mark in it.'");
+                    rt.write("\n", "'Maybe next time you'll be smart enough to test it yourself.'");
+                    rt.remove(t);
+                    break;
+                }
+            },
+        },
+        {
+            name: "patch_gate_trivia_wrong",
+            priority: 5,
+            sourceIndex: nextIdx + 101,
+            conditions: [
+                anyInput,
+                { cls: "history", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "gate_state", op: "eq_const", value: "await_trivia" }] },
+                { cls: "location", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "name", op: "eq_var", var: "__loc" }] },
+            ],
+            action: async (m, wm, term) => {
+                rt.remove(m.$1);
+                kickToBusStop(rt, m.$3, m.$2,
+                    "Wrong!! Buzzzzz.  Don't come back til you know the answer!");
             },
         },
     ];

@@ -1,4 +1,3 @@
-# Script: navigate the lawn and enter the mansion.
 no
 wait
 wait
@@ -17,9 +16,8 @@ press button
 yes
 yes
 yes
-claude
-none
-haunt
 look
+inven
+score
 n
-stop
+look

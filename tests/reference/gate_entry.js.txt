@@ -163,28 +163,10 @@ you are on the driveway. the gate to the outside
 is to the east, but is locked electronically.
 to the east is a wall.
 *
-to the east is a wall.
-*
-the wall is in the way.
-*
-the wall is in the way.
-*
-the wall is in the way.
-*
-to the east is a wall.
-*
-there is a fresh grave here.
-you're on the inside of north border of a wall.
-to the east is a wall.
-*
-luckily, the dirt is soft.
-there is a open grave.
-there is a bone here that you identify as from the missing link!
-*
-there is a large pipe that goes through the grave.
-there is a lever on the pipe labelled 'emergency release.'
+you have the following:
+watch
 *
 the party's over.
-your final score is 5
+your final score is 0
 the total possible is 440
 hmm... i don't think you tried very hard.

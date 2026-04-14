@@ -1,4 +1,4 @@
-# Script: navigate the lawn and enter the mansion.
+# Verify east-gate entry via button + dialog + trivia (binary fidelity)
 no
 wait
 wait
@@ -20,6 +20,5 @@ yes
 claude
 none
 haunt
-look
-n
+inven
 stop

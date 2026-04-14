@@ -170,6 +170,6 @@ Game state is automatically saved to `localStorage` after each turn. On reload, 
 
 ## Credits
 
-- **Haunt** by John Laird (1979-1983). Original OPS5 source.
+- **Haunt** by John Laird (1979-1983). [Original OPS5 source](https://ukrestrict.ifarchive.org/if-archive/games/source/haunt.ops5).
 - OPS5 production system architecture by Charles Forgy.
 - Reference interpreter: [sharplispers/ops5](https://github.com/sharplispers/ops5) on SBCL via Quicklisp.

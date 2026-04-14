@@ -1,4 +1,3 @@
-# Script: navigate the lawn and enter the mansion.
 no
 wait
 wait
@@ -19,7 +18,4 @@ yes
 yes
 claude
 none
-haunt
-look
-n
-stop
+xsel

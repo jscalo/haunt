@@ -229,6 +229,8 @@ you are inside of the house in the inner foyer.
 there is a walk-in closet to the west, an entrance to a hall to the north.
 there is a bowl of candy on the ground.
 *
+you just got candy .
+*
 some noise is coming from the hall.
 weird noises are coming from above.
 there is an official nfl football here!
@@ -241,6 +243,33 @@ a large room is to the east.
 you just got chair .
 weird noises are coming from above.
 the plate of the back of the chair says 'made by louis xiv'
+*
+you just got football .
+*
+weird noises are coming from above.
+you are in the library. all the walls are lined with books.
+there is a bust of homer within reach.
+*
+the east wall of books is open!
+*
+the west wall is open.
+you are in the head of a secret staircase.
+the stairs go down. a pole in the room goes through a hole in the ceiling.
+*
+you are in a dusty wine cellar. rows of bottles line the walls.
+the stairs go back up.
+there is a diamond studded corkscrew here!
+*
+you just got corkscrew .
+*
+the west wall is open.
+you are in secret_stairs .
+*
+the east wall of books is open!
+you are in library .
+*
+weird noises are coming from above.
+you are in main_hall .
 *
 weird noises are coming from above.
 the sound is coming from above you.
@@ -259,6 +288,322 @@ there is a dark room to the south,
 a hall to the west, a stone wall to the east,
 and another room to the north.
 *
+'cock-a-doodle-do'. you hear a rooster crow.
+the brick moves, but can't be removed from the wall.
+a secret panel in the wall opens!
+there is a room ahead.
+*
+you hear clanking and screams coming from the hall.
+there is some fine marijuana here! good stuff.
+*
+you just got marijuana .
+*
+there is some fine marijuana here! good stuff.
+*
+you hear clanking and screams coming from the hall.
+you are in upper_hall .
+*
+you hear clanking and screams coming from the hall.
+there is the shape of a body on the slab, covered with a sheet.
+you are in the laboratory. the most notable feature is a huge
+slab in the middle of the room. there is a large
+lever switch. the stairs are the only obvious exit. the ceiling
+is a glass dome painted black, much too high to reach.
+*
+the lights dim. a massive door on the east wall
+opens revealing a bank of computers, generators, and misc.
+electronic gear. the generators start to scream.
+the lights dim more. suddenly sparks start to fly from the
+equipment. the body on the table starts to jerk around.
+
+as suddenly as it started, the generators turn off, the
+wall closes. and everything returns to normal.....
+then the body rises, removes its sheet and it is a monster.
+
+the monster approaches you and says 'trick or treat'
+the lever has been thrown, and is stuck in that position.
+*
+the football goes crashing through the glass dome.
+the sun's rays cause the bat to shrivel. something falls to the floor.
+light shows throught the hole.
+there is a huge diamond ring here.
+*
+light shows throught the hole.
+the monster is pleased. he eats the candy, walks through the west wall
+and disappears.
+the west wall has the shape of a running figure in it.
+*
+light shows throught the hole.
+there is a sturdy stool here.
+you are in a bar. there isn't any booze.
+there is a bottle of turpentine here.
+*
+you just got bottle .
+*
+the west wall has the shape of a running figure in it.
+light shows throught the hole.
+the lever has been thrown, and is stuck in that position.
+you are in laboratory .
+there is a huge diamond ring here.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+la dee da.
+*
+light shows throught the hole.
+you just got ring .
+*
+light shows throught the hole.
+you hear clanking and screams coming from the hall.
+you are in upper_hall .
+*
+you hear clanking and screams coming from the hall.
+the sound is coming from above you.
+squeek! these stairs are delicate!
+you are in stairs .
+*
+the sound is coming from above you.
+weird noises are coming from above.
+you are in main_hall .
+*
+weird noises are coming from above.
+you are in a poorly lit hall. there is a faint scent of fresh paint.
+*
+there is a work of ugly modern art on the ground.
+you are in a room that smells of paint.
+there are no windows or door except the one you came through.
+the walls are wood panel.
+*
+the turpentine hits the painting and causes the paint to come off.
+the painting has a person contemplating a bust.
+there is a valuable rembrandt here.
+*
+you just got painting .
+*
+you are in dark_hall .
+*
+weird noises are coming from above.
+you are in main_hall .
+*
+weird noises are coming from above.
+the sound is coming from above you.
+squeek! these stairs are delicate!
+you are in stairs .
+*
+the sound is coming from above you.
+you hear clanking and screams coming from the hall.
+you are in upper_hall .
+*
+you hear clanking and screams coming from the hall.
+you are in a long, narrow hallway.
+the upper hall is to the east. a boarded-up doorway leads south.
+*
+you force your way through the boarded-up doorway.
+some noise can be heard through the boarded up door.
+there is the frame and springs of a king-size bed in the room.
+there is a mirror on the ceiling above the bed.
+you are in bedroom .
+*
+some noise can be heard through the boarded up door.
+there is a bar of soap here.
+you are in the master bathroom.
+the exciting features around are the bathtub and the toilet.
+*
+you just got soap .
+*
+ok.
+you are in the master bathroom.
+the exciting features around are the bathtub and the toilet.
+*
+you are in the master bathroom.
+the exciting features around are the bathtub and the toilet.
+the water is on in the bathtub.
+as long as we're here, we might as well wash.
+luckily we don't worry about clothes in this adventure!
+the water is nice and warm. too bad i don't have a rubber duckie!
+well let's use the soap to get clean.
+there is so much dirt here it takes alot of soap.
+as the soap wears away, we are left with a gem!!.
+*
+the bottle is full of bathwater.
+*
+duly sat.
+you are in the master bathroom.
+the exciting features around are the bathtub and the toilet.
+the water is on in the bathtub.
+*
+there is a piece of valuable jade here.
+the toilet and the wall have swivled around 180 degrees.
+you are now in a backroom.
+i assume this was for when grand-dad wanted to ... in private.
+there are no doors or windows. just the toilet.
+*
+you just got jade .
+*
+around you go again.
+the water is on in the bathtub.
+you are in bathroom .
+*
+some noise can be heard through the boarded up door.
+there is the frame and springs of a king-size bed in the room.
+there is a mirror on the ceiling above the bed.
+you are in bedroom .
+*
+some noise can be heard through the boarded up door.
+you are in balcony .
+*
+luckily you land on the mattress.
+this is the north side of the house.
+there is ivy on the walls of the house.
+there is a king-size mattress here.
+*
+there is an old style chair on the ground.
+*
+there is a diamond studded corkscrew here!
+*
+there is a huge diamond ring here.
+*
+there is a valuable gem here.
+*
+there is a piece of valuable jade here.
+*
+there is a valuable rembrandt here.
+*
+this is the north-west corner of the house.
+*
+you're on the lawn of the mansion.
+*
+this looks like an old garden, but the land is all dried and hard.
+*
+the ground shakes...
+an orchid sprouts from the ground.
+there is a beautiful black orchid here.
+there is a bit of a wet spot here.
+*
+you pick the orchid.
+*
+*
+you're on the lawn of the mansion.
+*
+you're on the lawn of the mansion.
+*
+you're on the lawn of the mansion.
+*
+you are at the sw corner of the house.
+*
+muffled sounds can be heard from inside.
+you are outside a large door in the front of an old mansion.
+*
+'knock! knock!'
+the door stays open.
+*
+muffled sounds can be heard from inside.
+some noise is coming from the hall.
+you are in foyer .
+*
+some noise is coming from the hall.
+weird noises are coming from above.
+you are in main_hall .
+*
+weird noises are coming from above.
+the sound is coming from above you.
+squeek! these stairs are delicate!
+you are in stairs .
+*
+crash! you've collapsed the stairs.
+you are on wreckage of the stairs.
+to the south is the main_hall, north is a small opening.
+*
+to the south is the wreckage of the stairs.
+this is the back hall. it connects the kitchen and
+dining room. the kitchen is east and the dining room is west.
+*
+the refrigirator door is closed.
+you are in a old kitchen. all the windows are
+boarded up. the only exit is west.
+
+there is a refrigerator in the corner.
+a ventilation duct is open over the refrigerator.
+*
+there is a small white cube in the refrigirator.
+the door of the ice box is open.
+*
+you have a cube.
+*
+there is a small white cube here.
+*
+to the south is the wreckage of the stairs.
+you are in back_hall .
+*
+there is a pair of silver candlesticks here!! no candles though.
+*
+you just got candlesticks .
+*
+to the south is the wreckage of the stairs.
+you are in back_hall .
+*
+you are in stairs_debris .
+*
+you clamber up the wreckage to the upper hall.
+you hear clanking and screams coming from the hall.
+you are in upper_hall .
+*
 you hear clanking and screams coming from the hall.
 you are in a long, narrow hallway.
 the upper hall is to the east. a boarded-up doorway leads south.
@@ -272,16 +617,18 @@ you are in bedroom .
 some noise can be heard through the boarded up door.
 you are in balcony .
 *
-there is an old style chair on the ground.
-*
-there's a watch here, it even has a luminous dial.
-*
-what?
-*
 luckily you land on the mattress.
 this is the north side of the house.
 there is ivy on the walls of the house.
+there is a valuable rembrandt here.
 there is a king-size mattress here.
+there is a piece of valuable jade here.
+there is a valuable gem here.
+there is an old style chair on the ground.
+there is a huge diamond ring here.
+there is a diamond studded corkscrew here!
+*
+there is a pair of silver candlesticks here!! no candles though.
 *
 this is the north east corner of the mansion.
 *
@@ -289,7 +636,6 @@ you are on a parking space.
 *
 to the east is a wall.
 *
-'cock-a-doodle-do'. you hear a rooster crow.
 to the east is a wall.
 *
 there is a fresh grave here.
@@ -360,17 +706,17 @@ the truck pulls in and parks on the drive.
 the driver gets out and heads north east.
 la dee da.
 *
+there is an empty bottle here.
+*
+there's a watch here, it even has a luminous dial.
+*
+what?
+*
 the back doors are now open.
 *
 you are in the back of the truck.
 *
 ok.
-*
-la dee da.
-*
-la dee da.
-*
-la dee da.
 *
 la dee da.
 *
@@ -413,11 +759,14 @@ make up your mind, sell or donate.
 make up your mind, sell or donate.
 make up your mind, sell or donate.
 make up your mind, sell or donate.
+make up your mind, sell or donate.
+make up your mind, sell or donate.
+make up your mind, sell or donate.
 james watt accuses you of being a reactionary idiot.
 he stomps off, mumbling, 'those strip miners are going
 to be real disappointed', and walks right through a pile of moose turds.
 i think you made the right decision.
 the party's over.
-your final score is 40
+your final score is 215
 the total possible is 440
-rank novice! are you scared of your own shadow?
+intermediate haunt hacker

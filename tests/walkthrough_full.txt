@@ -8,7 +8,7 @@ no
 wait
 wait
 board
-exit bus
+out
 
 # === Outer lawn to gate (8,5) ===
 e
@@ -19,7 +19,16 @@ n
 n
 
 # === Enter gate ===
-hi
+press button
+press button
+press button
+press button
+yes
+yes
+yes
+claude
+none
+haunt
 
 # === Navigate to ivy wall at (5,6): north then west ===
 n
