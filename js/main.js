@@ -60,6 +60,11 @@ async function main() {
         if (ans.toLowerCase().startsWith("y")) {
             try {
                 const snapshot = JSON.parse(autoRaw);
+                if (ans.toLowerCase() === "yy" && snapshot.classes && snapshot.classes.time) {
+                    for (const t of snapshot.classes.time) {
+                        t.realtime = 2200;
+                    }
+                }
                 term.println("Resuming...");
                 await runGame(term, { snapshot });
                 return;
