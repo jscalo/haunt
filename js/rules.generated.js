@@ -462,7 +462,7 @@ export function createRules(rt, engine) {
             name: "name21",
             priority: 0,
             sourceIndex: 30,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"y"},{"field":"place","op":"eq_var","var":"Z"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"Z"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_var","var":"x"},{"index":1,"op":"eq_const","value":"it"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"y"},{"field":"place","op":"eq_var","var":"Z"},{"field":"side","op":"eq_var","var":"__pos_side_Z","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_Z","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_Z","implicit":true}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"Z"},{"field":"side","op":"eq_var","var":"__pos_side_Z","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_Z","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_Z","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_var","var":"x"},{"index":1,"op":"eq_const","value":"it"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$4);
             rt.make("input", [m.x, m.y, rt.substr(m.$4, 4, "inf")].flat());
@@ -848,7 +848,7 @@ export function createRules(rt, engine) {
             name: "name60",
             priority: 0,
             sourceIndex: 69,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"n"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"get"},{"index":1,"op":"eq_const","value":"all"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"n"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"get"},{"index":1,"op":"eq_const","value":"all"}]}],
             action: async (m, wm, term) => {
                 rt.make("input", ["get", m.n].flat());
             },
@@ -908,7 +908,7 @@ export function createRules(rt, engine) {
             name: "name66",
             priority: 0,
             sourceIndex: 75,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":40}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"cecil"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"get"},{"index":1,"op":"eq_const","value":"cecil"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":40}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"cecil"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"get"},{"index":1,"op":"eq_const","value":"cecil"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$4);
             rt.write("\n", "Cecil is a free spirit.  He doesn't come with you.");
@@ -1217,7 +1217,7 @@ export function createRules(rt, engine) {
             name: "name100",
             priority: 0,
             sourceIndex: 106,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"corkscrew"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"corkscrew"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a diamond studded corkscrew here!");
             },
@@ -1236,7 +1236,7 @@ export function createRules(rt, engine) {
             name: "name102",
             priority: 0,
             sourceIndex: 108,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"ring"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"ring"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a huge diamond ring here.");
             },
@@ -1245,7 +1245,7 @@ export function createRules(rt, engine) {
             name: "name103",
             priority: 0,
             sourceIndex: 109,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"candy"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"candy"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a bowl of candy on the ground.");
             },
@@ -1264,7 +1264,7 @@ export function createRules(rt, engine) {
             name: "name105",
             priority: 0,
             sourceIndex: 111,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"candy"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"eat"},{"index":1,"op":"eq_const","value":"candy"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"candy"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"eat"},{"index":1,"op":"eq_const","value":"candy"}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "Candy tastes good; uhm!");
             rt.write("\n", "Of course the pins in the Snickers take a little chewing.");
@@ -1287,7 +1287,7 @@ export function createRules(rt, engine) {
             name: "name107",
             priority: 0,
             sourceIndex: 113,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"marijuana"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"marijuana"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is some fine marijuana here! Good stuff.");
             },
@@ -1391,7 +1391,7 @@ export function createRules(rt, engine) {
             name: "name117",
             priority: 0,
             sourceIndex: 123,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"cube"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"cube"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a small white cube here.");
             },
@@ -1609,7 +1609,7 @@ export function createRules(rt, engine) {
             name: "name135",
             priority: 0,
             sourceIndex: 141,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"place","op":"eq_var","var":"z"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"z"}]},{"cls":"input","isPositional":true,"prefixLength":4,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"kill"},{"index":1,"op":"eq_var","var":"x"},{"index":2,"op":"eq_const","value":"with"},{"index":3,"op":"eq_var","var":"y"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"place","op":"eq_var","var":"z"},{"field":"side","op":"eq_var","var":"__pos_side_z","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_z","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_z","implicit":true}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"z"},{"field":"side","op":"eq_var","var":"__pos_side_z","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_z","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_z","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":4,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"kill"},{"index":1,"op":"eq_var","var":"x"},{"index":2,"op":"eq_const","value":"with"},{"index":3,"op":"eq_var","var":"y"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$4);
             rt.write("\n", "Even with that you can't kill it.");
@@ -2475,7 +2475,7 @@ export function createRules(rt, engine) {
             name: "name221",
             priority: 0,
             sourceIndex: 227,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bottle"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":true,"tests":[{"field":"inside","op":"eq_const","value":"bottle"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bottle"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":true,"tests":[{"field":"inside","op":"eq_const","value":"bottle"}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is an empty bottle here.");
             },
@@ -2484,7 +2484,7 @@ export function createRules(rt, engine) {
             name: "name222",
             priority: 0,
             sourceIndex: 228,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bottle"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"q"},{"field":"inside","op":"eq_const","value":"bottle"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bottle"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"q"},{"field":"inside","op":"eq_const","value":"bottle"}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a bottle of", m.q, "here.");
             },
@@ -2493,7 +2493,7 @@ export function createRules(rt, engine) {
             name: "name223",
             priority: 0,
             sourceIndex: 229,
-            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"q"},{"field":"inside","op":"eq_const","value":"bottle"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bottle"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"get"},{"index":1,"op":"eq_var","var":"q"}]}],
+            conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"q"},{"field":"inside","op":"eq_const","value":"bottle"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bottle"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"get"},{"index":1,"op":"eq_var","var":"q"}]}],
             action: async (m, wm, term) => {
                 rt.modify(m.$2, { "place": "held" });
             rt.remove(m.$5);
@@ -2620,7 +2620,7 @@ export function createRules(rt, engine) {
             name: "name235",
             priority: 0,
             sourceIndex: 241,
-            conditions: [{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"water"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"water"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a wet spot here.");
             },
@@ -2629,7 +2629,7 @@ export function createRules(rt, engine) {
             name: "name236",
             priority: 0,
             sourceIndex: 242,
-            conditions: [{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"seawater"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"seawater"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a salty wet spot here.");
             },
@@ -2638,7 +2638,7 @@ export function createRules(rt, engine) {
             name: "name237",
             priority: 0,
             sourceIndex: 243,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bathwater"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bathwater"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a bit of a wet spot here.");
             },
@@ -2647,7 +2647,7 @@ export function createRules(rt, engine) {
             name: "name238",
             priority: 0,
             sourceIndex: 244,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"turpentine"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"turpentine"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$2);
             rt.write("\n", "The turpentine evaporates as it leaves the bottle.");
@@ -2677,7 +2677,7 @@ export function createRules(rt, engine) {
             name: "name241",
             priority: 0,
             sourceIndex: 247,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"in_set","set":["water","seawater","bathwater"]},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"fill"},{"index":1,"op":"eq_const","value":"bottle"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"in_set","set":["water","seawater","bathwater"]},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"fill"},{"index":1,"op":"eq_const","value":"bottle"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$3);
             rt.write("\n", "Sorry, I don't have a mop!");
@@ -2721,7 +2721,7 @@ export function createRules(rt, engine) {
             name: "name245",
             priority: 0,
             sourceIndex: 251,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"matches"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"matches"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There are matches here.");
             },
@@ -2790,7 +2790,7 @@ export function createRules(rt, engine) {
             name: "name252",
             priority: 0,
             sourceIndex: 258,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"football"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"football"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is an official NFL football here!");
             },
@@ -2842,7 +2842,7 @@ export function createRules(rt, engine) {
             name: "name257",
             priority: 0,
             sourceIndex: 263,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"watch"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"watch"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There's a watch here, it even has a luminous dial.");
             },
@@ -3050,7 +3050,7 @@ export function createRules(rt, engine) {
             name: "name274",
             priority: 0,
             sourceIndex: 280,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"painting"},{"field":"place","op":"eq_var","var":"x"},{"field":"covered","op":"eq_const","value":"t"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"painting"},{"field":"place","op":"eq_var","var":"x"},{"field":"covered","op":"eq_const","value":"t"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a work of ugly modern art on the ground.");
             },
@@ -3059,7 +3059,7 @@ export function createRules(rt, engine) {
             name: "name275",
             priority: 0,
             sourceIndex: 281,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"painting"},{"field":"place","op":"eq_var","var":"x"},{"field":"covered","op":"eq_const","value":"nil"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"painting"},{"field":"place","op":"eq_var","var":"x"},{"field":"covered","op":"eq_const","value":"nil"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a valuable Rembrandt here.");
             },
@@ -3082,7 +3082,7 @@ export function createRules(rt, engine) {
             name: "name277",
             priority: 0,
             sourceIndex: 283,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"painting"},{"field":"place","op":"eq_var","var":"x"},{"field":"covered","op":"eq_const","value":"t"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bottle"},{"field":"place","op":"eq_const","value":"held"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"turpentine"},{"field":"inside","op":"eq_const","value":"bottle"}]},{"cls":"input","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"in_set","set":["clean","pour"]}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"painting"},{"field":"place","op":"eq_var","var":"x"},{"field":"covered","op":"eq_const","value":"t"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bottle"},{"field":"place","op":"eq_const","value":"held"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"turpentine"},{"field":"inside","op":"eq_const","value":"bottle"}]},{"cls":"input","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"in_set","set":["clean","pour"]}]}],
             action: async (m, wm, term) => {
                 rt.modify(m.$2, { "covered": null, "treasure": "t" });
             rt.remove(m.$4);
@@ -3114,7 +3114,7 @@ export function createRules(rt, engine) {
             name: "name280",
             priority: 0,
             sourceIndex: 286,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"money"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"money"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "The money is here!");
             },
@@ -3143,7 +3143,7 @@ export function createRules(rt, engine) {
             name: "name283",
             priority: 0,
             sourceIndex: 289,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stereo"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stereo"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is an expensive stereo here, worth many megabucks!!");
             },
@@ -3152,7 +3152,7 @@ export function createRules(rt, engine) {
             name: "name284",
             priority: 0,
             sourceIndex: 290,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"book"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"book"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a book on the ground.");
             },
@@ -3174,7 +3174,7 @@ export function createRules(rt, engine) {
             name: "name286",
             priority: 0,
             sourceIndex: 292,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"gold"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"gold"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is gold here.");
             },
@@ -3183,7 +3183,7 @@ export function createRules(rt, engine) {
             name: "name287",
             priority: 0,
             sourceIndex: 293,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"horn"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"horn"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a magic unicorn horn here.");
             },
@@ -3192,7 +3192,7 @@ export function createRules(rt, engine) {
             name: "name288",
             priority: 0,
             sourceIndex: 294,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"horn"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"horn"},{"field":"place","op":"eq_const","value":"held"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"drop"},{"index":1,"op":"eq_const","value":"horn"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"horn"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"horn"},{"field":"place","op":"eq_const","value":"held"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"drop"},{"index":1,"op":"eq_const","value":"horn"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$3);
             rt.remove(m.$4);
@@ -3271,7 +3271,7 @@ export function createRules(rt, engine) {
             name: "name295",
             priority: 0,
             sourceIndex: 301,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"candlesticks"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"candlesticks"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a pair of silver candlesticks here!! No candles though.");
             },
@@ -3332,7 +3332,7 @@ export function createRules(rt, engine) {
             name: "name301",
             priority: 0,
             sourceIndex: 307,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"chair"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"chair"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is an old style chair on the ground.");
             },
@@ -3350,7 +3350,7 @@ export function createRules(rt, engine) {
             name: "name303",
             priority: 0,
             sourceIndex: 309,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"chair"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"mount"},{"index":1,"op":"eq_const","value":"chair"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"chair"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"mount"},{"index":1,"op":"eq_const","value":"chair"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$2);
             rt.remove(m.$3);
@@ -3362,7 +3362,7 @@ export function createRules(rt, engine) {
             name: "name304",
             priority: 0,
             sourceIndex: 310,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"chair"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":3,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"sit"},{"index":1,"op":"eq_const","value":"on"},{"index":2,"op":"eq_const","value":"chair"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"chair"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":3,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"sit"},{"index":1,"op":"eq_const","value":"on"},{"index":2,"op":"eq_const","value":"chair"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$2);
             rt.remove(m.$3);
@@ -3374,7 +3374,7 @@ export function createRules(rt, engine) {
             name: "name305",
             priority: 0,
             sourceIndex: 311,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stool"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stool"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a sturdy stool here.");
             },
@@ -3383,7 +3383,7 @@ export function createRules(rt, engine) {
             name: "name306",
             priority: 0,
             sourceIndex: 312,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stool"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"sit"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stool"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"sit"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$3);
             rt.modify(m.$1, { "siton": "stool" });
@@ -3404,7 +3404,7 @@ export function createRules(rt, engine) {
             name: "name308",
             priority: 0,
             sourceIndex: 314,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stool"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"mount"},{"index":1,"op":"eq_const","value":"stool"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stool"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"mount"},{"index":1,"op":"eq_const","value":"stool"}]}],
             action: async (m, wm, term) => {
                 rt.modify(m.$1, { "siton": "stool" });
             rt.remove(m.$3);
@@ -3425,7 +3425,7 @@ export function createRules(rt, engine) {
             name: "name310",
             priority: 0,
             sourceIndex: 316,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"chest"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"chest"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a chest of treasure!!!");
             },
@@ -3454,7 +3454,7 @@ export function createRules(rt, engine) {
             name: "name313",
             priority: 0,
             sourceIndex: 319,
-            conditions: [{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"conch"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"conch"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a large conch shell here.");
             },
@@ -3483,7 +3483,7 @@ export function createRules(rt, engine) {
             name: "name316",
             priority: 0,
             sourceIndex: 322,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"token"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"token"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a token here.");
             },
@@ -3492,7 +3492,7 @@ export function createRules(rt, engine) {
             name: "name317",
             priority: 0,
             sourceIndex: 323,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"tokens"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"tokens"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There are tokens here.");
             },
@@ -3682,7 +3682,7 @@ export function createRules(rt, engine) {
             name: "name333",
             priority: 0,
             sourceIndex: 343,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"pearls"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"pearls"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There are huge pearls here!!");
             },
@@ -3691,7 +3691,7 @@ export function createRules(rt, engine) {
             name: "name334",
             priority: 0,
             sourceIndex: 344,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"diamonds"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"diamonds"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There are diamonds here!");
             },
@@ -3700,7 +3700,7 @@ export function createRules(rt, engine) {
             name: "name335",
             priority: 0,
             sourceIndex: 345,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"orchid"},{"field":"place","op":"eq_var","var":"x"},{"field":"state","op":"eq_const","value":"plant"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"orchid"},{"field":"place","op":"eq_var","var":"x"},{"field":"state","op":"eq_const","value":"plant"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a beautiful black orchid here.");
             },
@@ -3709,7 +3709,7 @@ export function createRules(rt, engine) {
             name: "name336",
             priority: 0,
             sourceIndex: 346,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"orchid"},{"field":"place","op":"eq_var","var":"x"},{"field":"state","op":"eq_const","value":"plant"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"smell"},{"index":1,"op":"eq_var","var":"y"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"orchid"},{"field":"place","op":"eq_var","var":"x"},{"field":"state","op":"eq_const","value":"plant"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"smell"},{"index":1,"op":"eq_var","var":"y"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$3);
             rt.write("\n", "Yum! The orchid smells delicious!");
@@ -3759,7 +3759,7 @@ export function createRules(rt, engine) {
             name: "name341",
             priority: 0,
             sourceIndex: 351,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_var","var":"x"},{"field":"tied","op":"eq_const","value":"noose"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_var","var":"x"},{"field":"tied","op":"eq_const","value":"noose"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is rope in a noose here.");
             },
@@ -3768,7 +3768,7 @@ export function createRules(rt, engine) {
             name: "name342",
             priority: 0,
             sourceIndex: 352,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_var","var":"x"},{"field":"tied","op":"eq_const","value":"untied"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_var","var":"x"},{"field":"tied","op":"eq_const","value":"untied"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is some loose rope here.");
             },
@@ -3777,7 +3777,7 @@ export function createRules(rt, engine) {
             name: "name343",
             priority: 0,
             sourceIndex: 353,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"y"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"neq_var","var":"x"},{"field":"tied","op":"eq_var","var":"y"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"y"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"neq_var","var":"x"},{"field":"tied","op":"eq_var","var":"y"}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "A rope is tied to the", m.y);
             },
@@ -3786,7 +3786,7 @@ export function createRules(rt, engine) {
             name: "name344",
             priority: 0,
             sourceIndex: 354,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"y"},{"field":"place","op":"neq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_var","var":"x"},{"field":"tied","op":"eq_var","var":"y"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"y"},{"field":"place","op":"neq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_var","var":"x"},{"field":"tied","op":"eq_var","var":"y"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "An end of a rope is here.");
             },
@@ -3795,7 +3795,7 @@ export function createRules(rt, engine) {
             name: "name345",
             priority: 0,
             sourceIndex: 355,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_var","var":"x"},{"field":"tied","op":"eq_var","var":"y"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"y"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_var","var":"x"},{"field":"tied","op":"eq_var","var":"y"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"y"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "An end of the rope is here, tied to the ", m.y);
             },
@@ -3804,7 +3804,7 @@ export function createRules(rt, engine) {
             name: "name346",
             priority: 0,
             sourceIndex: 356,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_var","var":"x"},{"field":"tied","op":"eq_var","var":"y"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"y"},{"field":"place","op":"eq_const","value":"held"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_var","var":"x"},{"field":"tied","op":"eq_var","var":"y"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"y"},{"field":"place","op":"eq_const","value":"held"}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "A rope tied to the", m.y, "is here.");
             },
@@ -3886,7 +3886,7 @@ export function createRules(rt, engine) {
             name: "name354",
             priority: 0,
             sourceIndex: 364,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"y"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"place","op":"eq_var","var":"y"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"neq_const","value":"held"},{"field":"tied","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"get"},{"index":1,"op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"y"},{"field":"side","op":"eq_var","var":"__pos_side_y","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_y","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_y","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"place","op":"eq_var","var":"y"},{"field":"side","op":"eq_var","var":"__pos_side_y","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_y","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_y","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"neq_const","value":"held"},{"field":"tied","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"get"},{"index":1,"op":"eq_var","var":"x"}]}],
             action: async (m, wm, term) => {
                 rt.modify(m.$3, { "place": "held" });
             rt.write("\n", "You get the rope first and then ...");
@@ -3907,7 +3907,7 @@ export function createRules(rt, engine) {
             name: "name356",
             priority: 0,
             sourceIndex: 366,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"Z"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_const","value":"held"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"cecil"},{"field":"place","op":"eq_var","var":"Z"}]},{"cls":"input","isPositional":true,"prefixLength":4,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"tie"},{"index":1,"op":"eq_const","value":"rope"},{"index":2,"op":"eq_const","value":"to"},{"index":3,"op":"eq_const","value":"cecil"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"Z"},{"field":"side","op":"eq_var","var":"__pos_side_Z","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_Z","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_Z","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_const","value":"held"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"cecil"},{"field":"place","op":"eq_var","var":"Z"},{"field":"side","op":"eq_var","var":"__pos_side_Z","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_Z","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_Z","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":4,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"tie"},{"index":1,"op":"eq_const","value":"rope"},{"index":2,"op":"eq_const","value":"to"},{"index":3,"op":"eq_const","value":"cecil"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$4);
             rt.write("\n", "You can't tie cecil down!");
@@ -3927,7 +3927,7 @@ export function createRules(rt, engine) {
             name: "name358",
             priority: 0,
             sourceIndex: 368,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"Z"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_const","value":"held"},{"field":"tied","op":"eq_const","value":"untied"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"dracula"},{"field":"place","op":"eq_var","var":"Z"}]},{"cls":"input","isPositional":true,"prefixLength":4,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"tie"},{"index":1,"op":"eq_const","value":"rope"},{"index":2,"op":"eq_const","value":"to"},{"index":3,"op":"eq_const","value":"dracula"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"Z"},{"field":"side","op":"eq_var","var":"__pos_side_Z","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_Z","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_Z","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_const","value":"held"},{"field":"tied","op":"eq_const","value":"untied"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"dracula"},{"field":"place","op":"eq_var","var":"Z"},{"field":"side","op":"eq_var","var":"__pos_side_Z","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_Z","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_Z","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":4,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"tie"},{"index":1,"op":"eq_const","value":"rope"},{"index":2,"op":"eq_const","value":"to"},{"index":3,"op":"eq_const","value":"dracula"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$4);
             rt.write("\n", "You can't get Dracula, not to mention tie him up.");
@@ -3978,7 +3978,7 @@ export function createRules(rt, engine) {
             name: "name363",
             priority: 0,
             sourceIndex: 373,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_const","value":"held"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"chest"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"octopus"},{"field":"alive","op":"eq_const","value":"t"}]},{"cls":"input","isPositional":true,"prefixLength":4,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"tie"},{"index":1,"op":"eq_const","value":"rope"},{"index":2,"op":"eq_const","value":"to"},{"index":3,"op":"eq_const","value":"chest"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"rope"},{"field":"place","op":"eq_const","value":"held"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"chest"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"octopus"},{"field":"alive","op":"eq_const","value":"t"}]},{"cls":"input","isPositional":true,"prefixLength":4,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"tie"},{"index":1,"op":"eq_const","value":"rope"},{"index":2,"op":"eq_const","value":"to"},{"index":3,"op":"eq_const","value":"chest"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$5);
             rt.write("\n", "The octopus blocks your way.");
@@ -4071,7 +4071,7 @@ export function createRules(rt, engine) {
             name: "name371",
             priority: 0,
             sourceIndex: 382,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"wetsuit"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"wetsuit"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a wetsuit, with everything needed to survive (location ^underwater t).");
             },
@@ -4090,7 +4090,7 @@ export function createRules(rt, engine) {
             name: "name373",
             priority: 0,
             sourceIndex: 384,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"wetsuit"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":3,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"put"},{"index":1,"op":"eq_const","value":"on"},{"index":2,"op":"eq_const","value":"wetsuit"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"wetsuit"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":3,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"put"},{"index":1,"op":"eq_const","value":"on"},{"index":2,"op":"eq_const","value":"wetsuit"}]}],
             action: async (m, wm, term) => {
                 rt.modify(m.$2, { "place": "held" });
             },
@@ -4131,7 +4131,7 @@ export function createRules(rt, engine) {
             name: "name377",
             priority: 0,
             sourceIndex: 388,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"speargun"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"speargun"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a speargun that shoots underwater.");
             },
@@ -4140,7 +4140,7 @@ export function createRules(rt, engine) {
             name: "name378",
             priority: 0,
             sourceIndex: 389,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"speargun"},{"field":"place","op":"eq_var","var":"x"},{"field":"state","op":"eq_const","value":"loaded"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"speargun"},{"field":"place","op":"eq_var","var":"x"},{"field":"state","op":"eq_const","value":"loaded"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "The speargun is loaded, ready to fire.");
             },
@@ -4182,7 +4182,7 @@ export function createRules(rt, engine) {
             name: "name382",
             priority: 0,
             sourceIndex: 393,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"spear"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"spear"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a speargun spear here.");
             },
@@ -4211,7 +4211,7 @@ export function createRules(rt, engine) {
             name: "name385",
             priority: 0,
             sourceIndex: 396,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"coins"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"coins"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "You see many coins here!");
             },
@@ -4220,7 +4220,7 @@ export function createRules(rt, engine) {
             name: "name386",
             priority: 0,
             sourceIndex: 397,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bone"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bone"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a bone here that you identify as from the MISSING LINK!");
             },
@@ -4229,7 +4229,7 @@ export function createRules(rt, engine) {
             name: "name387",
             priority: 0,
             sourceIndex: 398,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"soap"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"soap"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a bar of soap here.");
             },
@@ -4238,7 +4238,7 @@ export function createRules(rt, engine) {
             name: "name388",
             priority: 0,
             sourceIndex: 399,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"gem"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"gem"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a valuable gem here.");
             },
@@ -4247,7 +4247,7 @@ export function createRules(rt, engine) {
             name: "name396",
             priority: 0,
             sourceIndex: 400,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"jade"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"jade"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a piece of valuable jade here.");
             },
@@ -4292,7 +4292,7 @@ export function createRules(rt, engine) {
             name: "name400",
             priority: 0,
             sourceIndex: 404,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"orchid"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"eat"},{"index":1,"op":"eq_const","value":"orchid"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"orchid"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"eat"},{"index":1,"op":"eq_const","value":"orchid"}]}],
             action: async (m, wm, term) => {
                 rt.make("input", ["get", "orchid"].flat());
             },
@@ -6531,7 +6531,7 @@ export function createRules(rt, engine) {
             name: "name1225",
             priority: 0,
             sourceIndex: 622,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"mattress"},{"field":"place","op":"eq_var","var":"x"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"cut"},{"index":1,"op":"eq_const","value":"mattress"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"mattress"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"cut"},{"index":1,"op":"eq_const","value":"mattress"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$3);
             rt.remove(m.$2);
@@ -6737,7 +6737,7 @@ export function createRules(rt, engine) {
             name: "name1245",
             priority: 0,
             sourceIndex: 642,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"neq_const","value":"bedroom"},{"field":"name","op":"eq_var","var":"x"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"mattress"},{"field":"place","op":"eq_var","var":"x"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"neq_const","value":"bedroom"},{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"mattress"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "There is a king-size mattress here.");
             },

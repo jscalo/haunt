@@ -544,7 +544,51 @@ function translateLHS(lhs) {
             if (cond) out.push(cond);
         }
     }
+    addPositionConstraints(out);
     return { conditions: out, priority: 0, shift: 0 };
+}
+
+// The lawn is a grid of ~64 cells sharing ^name lawn and differing only in
+// side/east/north. The OPS5 source pairs `(location ^name <x>)` with
+// `(object ^place <x>)` without constraining position, so every lawn item
+// announces itself from every lawn cell. Tag added tests `implicit: true`
+// so the engine excludes them from the specificity tiebreak — preserving
+// original MEA conflict resolution.
+function addPositionConstraints(conditions) {
+    const loc = conditions.find(c =>
+        c && !c.negated && c.cls === "location" && !c.isPositional
+    );
+    if (!loc) return;
+    const nameTest = loc.tests.find(t => t.field === "name" && t.op === "eq_var");
+    if (!nameTest) return;
+    const locVar = nameTest.var;
+    const posFields = ["side", "east", "north"];
+    const hasField = (cond, f) => cond.tests.some(t => t.field === f);
+    if (posFields.some(f => hasField(loc, f))) return;
+
+    const targets = conditions.filter(cond =>
+        cond && !cond.negated && !cond.isPositional
+        && (cond.cls === "object" || cond.cls === "portal")
+        && cond.tests.some(t =>
+            t.field === "place" && t.op === "eq_var" && t.var === locVar
+        )
+    );
+    if (targets.length === 0) return;
+
+    const fresh = {
+        side: "__pos_side_" + locVar,
+        east: "__pos_east_" + locVar,
+        north: "__pos_north_" + locVar,
+    };
+    for (const f of posFields) {
+        loc.tests.push({ field: f, op: "eq_var", var: fresh[f], implicit: true });
+    }
+    for (const cond of targets) {
+        for (const f of posFields) {
+            if (hasField(cond, f)) continue;
+            cond.tests.push({ field: f, op: "eq_var", var: fresh[f], implicit: true });
+        }
+    }
 }
 
 // --- RHS translation ---------------------------------------------------

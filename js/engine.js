@@ -140,10 +140,7 @@ export class Engine {
                     .filter(w => w && w !== domWme)
                     .map(w => w._stamp)
                     .sort((a, b) => b - a);
-                const specCount = rule.conditions.reduce(
-                    (n, c) => n + (c.tests ? c.tests.length : 0),
-                    0
-                );
+                const specCount = ruleSpecificity(rule);
                 const k = {
                     firstStamp: domStamp,
                     rest,
@@ -223,6 +220,19 @@ export class Engine {
         }
         return true;
     }
+}
+
+// Rule-static. Tests flagged `implicit` are auto-added position constraints
+// from the rule generator; they must not influence the MEA specificity tiebreak.
+function ruleSpecificity(rule) {
+    if (rule._specificity !== undefined) return rule._specificity;
+    let n = 0;
+    for (const c of rule.conditions) {
+        if (!c.tests) continue;
+        for (const t of c.tests) if (!t.implicit) n++;
+    }
+    rule._specificity = n;
+    return n;
 }
 
 function makeBindings(bindings, matched) {
