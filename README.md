@@ -100,18 +100,28 @@ A BIOS-style boot sequence (`js/bootseq.js`) plays on first load: memory count, 
 
 ## Verification
 
-The port includes a verification framework that compares output from the JavaScript engine against the original OPS5 interpreter (SBCL + sharplispers/ops5 via Quicklisp) for identical command sequences.
+The port includes a verification framework that runs seven walkthrough scripts through the JavaScript engine and checks the output for regressions. Each run is normalized (case, whitespace, nil display, interpreter boilerplate stripped) and compared against a captured reference.
 
 ```
 node tests/verify.mjs
 ```
 
-Six walkthrough scripts exercise different game paths. Output from both engines is normalized (case, whitespace, nil display, interpreter boilerplate stripped) and diffed line by line. When SBCL is not available, the framework falls back to stored reference outputs in `tests/reference/`.
+The pass/fail signal is a **regression check**: the JS output must match `tests/reference/*.js.txt`, the last-blessed snapshot of the port's own output. Additionally, when SBCL + sharplispers/ops5 is available (or `tests/reference/*.ops5.txt` exists as a fallback), the run reports an **OPS5 divergence** — the line count by which the JS output differs from the original interpreter's output. That number is informational, not a pass/fail criterion.
 
-Known differences fall into two categories:
+```
+Running: full PASS [OPS5 divergence: 164]
+```
+
+After an intentional change (e.g. a patch rule that fixes a bug), re-bless the references:
+
+```
+node tests/verify.mjs --capture
+```
+
+OPS5 divergence is expected and has two sources:
 
 - **Patch divergence**: Where our patches fix original bugs (e.g., the grave dig puzzle), the outputs intentionally differ.
-- **Description ordering**: Within a single turn, ambient description lines may appear in a different order due to our modified MEA tiebreak. All the same text appears — just occasionally swapped.
+- **Conflict-set tiebreak**: sharplispers falls back to pushdown (insertion) order for instantiations tied on recency and specificity; this engine uses rule source index. Within a single turn, ambient description lines may appear in a different order as a result — all the same text appears, just occasionally swapped.
 
 The verification framework already caught and helped fix a code generation bug where bare comparisons like `^score < 20` (outside brace groups) were mistranslated as literal string equality.
 

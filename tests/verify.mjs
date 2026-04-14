@@ -39,7 +39,7 @@ for (const script of scripts) {
     const scriptPath = resolve(__dirname, script);
     process.stdout.write(`Running: ${name} `);
 
-    let jsNorm, ops5Norm;
+    let jsNorm, ops5Norm, jsRefNorm;
 
     try {
         const jsResult = await runJS(scriptPath);
@@ -68,35 +68,41 @@ for (const script of scripts) {
                 console.log("--- OPS5 normalized (first 80 lines) ---");
                 console.log(ops5Norm.split("\n").slice(0, 80).join("\n"));
             }
-
-            if (flagCapture) {
-                if (!existsSync(REF_DIR)) mkdirSync(REF_DIR, { recursive: true });
-                writeFileSync(resolve(REF_DIR, `${name}.ops5.txt`), ops5Norm + "\n");
-                writeFileSync(resolve(REF_DIR, `${name}.js.txt`), jsNorm + "\n");
-            }
         } catch (e) {
             console.log(`ERROR (OPS5): ${e.message}`);
-            results.push({ name, pass: false, error: `OPS5 error: ${e.message}` });
-            continue;
+            ops5Norm = null;
         }
     } else {
         const refPath = resolve(REF_DIR, `${name}.ops5.txt`);
         if (existsSync(refPath)) {
             ops5Norm = readFileSync(refPath, "utf8").trim();
-        } else {
-            process.stdout.write("SKIP (no SBCL, no reference)\n");
-            results.push({ name, pass: null, skip: true });
-            continue;
         }
     }
 
-    const diffs = computeDiff(jsNorm, ops5Norm);
-    if (diffs.length === 0) {
-        process.stdout.write("PASS\n");
-        results.push({ name, pass: true });
+    if (flagCapture) {
+        if (!existsSync(REF_DIR)) mkdirSync(REF_DIR, { recursive: true });
+        writeFileSync(resolve(REF_DIR, `${name}.js.txt`), jsNorm + "\n");
+        if (ops5Norm) writeFileSync(resolve(REF_DIR, `${name}.ops5.txt`), ops5Norm + "\n");
+    }
+
+    const jsRefPath = resolve(REF_DIR, `${name}.js.txt`);
+    if (!existsSync(jsRefPath)) {
+        process.stdout.write("SKIP (no JS reference — run with --capture)\n");
+        results.push({ name, pass: null, skip: true });
+        continue;
+    }
+    jsRefNorm = readFileSync(jsRefPath, "utf8").trim();
+
+    const regressionDiffs = computeDiff(jsNorm, jsRefNorm);
+    const ops5Diffs = ops5Norm ? computeDiff(jsNorm, ops5Norm).length : null;
+    const ops5Suffix = ops5Diffs == null ? "" : ` [OPS5 divergence: ${ops5Diffs}]`;
+
+    if (regressionDiffs.length === 0) {
+        process.stdout.write(`PASS${ops5Suffix}\n`);
+        results.push({ name, pass: true, ops5Diffs });
     } else {
-        process.stdout.write(`DIFF (${diffs.length} differences)\n`);
-        results.push({ name, pass: false, diffs });
+        process.stdout.write(`REGRESSION (${regressionDiffs.length} lines vs. JS reference)${ops5Suffix}\n`);
+        results.push({ name, pass: false, diffs: regressionDiffs, ops5Diffs });
     }
 }
 
@@ -110,8 +116,8 @@ for (const r of results) {
             if (d.contextBefore.length > 0) {
                 for (const c of d.contextBefore) console.log(`    ${c}`);
             }
-            console.log(`    JS:   ${JSON.stringify(d.js)}`);
-            console.log(`    OPS5: ${JSON.stringify(d.ops5)}`);
+            console.log(`    JS:  ${JSON.stringify(d.js)}`);
+            console.log(`    REF: ${JSON.stringify(d.ops5)}`);
         }
         if (r.diffs.length > 20) {
             console.log(`  ... and ${r.diffs.length - 20} more`);

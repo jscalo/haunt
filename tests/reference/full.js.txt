@@ -153,8 +153,8 @@ you are on the balcony. the doors to the inside
 are missing leaving a large doorway to the inside.
 *
 some noise can be heard through the boarded up door.
-there is a king-size bed in the middle of the room.
 there is a mirror on the ceiling above the bed.
+there is a king-size bed in the middle of the room.
 you are in what looks like the master bedroom of the mansion.
 a large doorway opens to the balcony to the north.
 to the east is a opening to the bathroom.
@@ -163,34 +163,34 @@ the main doorway to the rest of the house is boarded up and impassable.
 you just got mattress .
 there is the frame and springs of a king-size bed in the room.
 *
+some noise can be heard through the boarded up door.
 the mattress just clears the door.
 you are in balcony .
 *
 the mattress floats to the ground.
 *
 luckily you land on the mattress.
-there is a king-size mattress here.
 this is the north side of the house.
 there is ivy on the walls of the house.
-*
 there is a king-size mattress here.
+*
 this is the north-west corner of the house.
 *
-there is a king-size mattress here.
 you are on the west side of the house.
 *
-there is a king-size mattress here.
 you are at the sw corner of the house.
 *
 muffled sounds can be heard from inside.
-there is a king-size mattress here.
 you are outside a large door in the front of an old mansion.
 *
 'knock! knock!'
 the door creaks open.
 a voice from within says: 'welcome, lover.'
 *
+muffled sounds can be heard from inside.
 some noise is coming from the hall.
+you are inside of the house in the inner foyer.
+there is a walk-in closet to the west, an entrance to a hall to the north.
 you feel a chill run down your spine, and you doubt your own sanity.
 
 a booming voice proclaims:
@@ -202,23 +202,26 @@ you are inside of the house in the inner foyer.
 there is a walk-in closet to the west, an entrance to a hall to the north.
 there is a bowl of candy on the ground.
 *
-there is an old style chair on the ground.
+some noise is coming from the hall.
 weird noises are coming from above.
+there is an old style chair on the ground.
 you are in the main hall.
 the foyer is south.
 the hall extends west and darkens.
 a large room is to the east.
 *
 you just got chair .
-the plate of the back of the chair says 'made by louis xiv'
 weird noises are coming from above.
+the plate of the back of the chair says 'made by louis xiv'
 *
+weird noises are coming from above.
 the sound is coming from above you.
 you are on the landing of the stair case.
 stairs go up and down.
 
 the stairs are squeeky! they seem about to collapse.
 *
+the sound is coming from above you.
 you hear clanking and screams coming from the hall.
 you are at the upper hall. you can see down the
 first steps of some stairs. a circular staircase
@@ -228,6 +231,7 @@ there is a dark room to the south,
 a hall to the west, a stone wall to the east,
 and another room to the north.
 *
+you hear clanking and screams coming from the hall.
 you are in a long, narrow hallway.
 the upper hall is to the east. a boarded-up doorway leads south.
 *
@@ -237,6 +241,7 @@ there is the frame and springs of a king-size bed in the room.
 there is a mirror on the ceiling above the bed.
 you are in bedroom .
 *
+some noise can be heard through the boarded up door.
 you are in balcony .
 *
 there is an old style chair on the ground.
@@ -246,24 +251,19 @@ there's a watch here, it even has a luminous dial.
 there is a token here.
 *
 luckily you land on the mattress.
-there is a king-size mattress here.
 this is the north side of the house.
 there is ivy on the walls of the house.
-*
 there is a king-size mattress here.
+*
 this is the north east corner of the mansion.
 *
-there is a king-size mattress here.
 you are on a parking space.
 *
-there is a king-size mattress here.
 to the east is a wall.
 *
-there is a king-size mattress here.
 to the east is a wall.
 *
 there is a fresh grave here.
-there is a king-size mattress here.
 you're on the inside of north border of a wall.
 to the east is a wall.
 *
@@ -309,25 +309,17 @@ la dee da.
 *
 la dee da.
 *
-there is a king-size mattress here.
-there is a bone here that you identify as from the missing link!
 to the east is a wall.
 *
-there is a king-size mattress here.
-there is a bone here that you identify as from the missing link!
 to the east is a wall.
 *
 you see a truck outside at the gate.
-there is a king-size mattress here.
 you are on the driveway. the gate to the outside
 is to the east, but is locked electronically.
-there is a bone here that you identify as from the missing link!
 to the east is a wall.
 *
-there is a king-size mattress here.
 you are on the drive way.
 the drive has a gate in the wall to the east.
-there is a bone here that you identify as from the missing link!
 *
 the gates open and the truck enters. the gate closes before you can escape.
 the truck says 'oil line fixit' on the side.

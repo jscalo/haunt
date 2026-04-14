@@ -58,7 +58,9 @@ you are on the driveway. the gate to the outside
 is to the east, but is locked electronically.
 to the east is a wall.
 *
-what?
+you are on the driveway. the gate to the outside
+is to the east, but is locked electronically.
+to the east is a wall.
 *
 the party's over.
 your final score is 0

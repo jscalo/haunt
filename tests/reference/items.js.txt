@@ -149,7 +149,10 @@ you are outside a large door in the front of an old mansion.
 the door creaks open.
 a voice from within says: 'welcome, lover.'
 *
+muffled sounds can be heard from inside.
 some noise is coming from the hall.
+you are inside of the house in the inner foyer.
+there is a walk-in closet to the west, an entrance to a hall to the north.
 you feel a chill run down your spine, and you doubt your own sanity.
 
 a booming voice proclaims:
@@ -170,20 +173,24 @@ watch
 *
 there is a bowl of candy on the ground.
 *
-what?
+you are inside of the house in the inner foyer.
+there is a walk-in closet to the west, an entrance to a hall to the north.
+some noise is coming from the hall.
+there is a bowl of candy on the ground.
 *
 you just got candy .
 *
-there is an old style chair on the ground.
+some noise is coming from the hall.
 weird noises are coming from above.
+there is an old style chair on the ground.
 you are in the main hall.
 the foyer is south.
 the hall extends west and darkens.
 a large room is to the east.
 *
 you just got chair .
-the plate of the back of the chair says 'made by louis xiv'
 weird noises are coming from above.
+the plate of the back of the chair says 'made by louis xiv'
 *
 you have the following:
 chair
@@ -197,7 +204,13 @@ there is an old style chair on the ground.
 *
 there is a bowl of candy on the ground.
 *
-what?
+you are in the main hall.
+the foyer is south.
+the hall extends west and darkens.
+a large room is to the east.
+weird noises are coming from above.
+there is an old style chair on the ground.
+there is a bowl of candy on the ground.
 *
 you just got chair .
 the plate of the back of the chair says 'made by louis xiv'

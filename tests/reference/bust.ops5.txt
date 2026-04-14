@@ -136,11 +136,48 @@ you are on the driveway. the gate to the outside
 is to the east, but is locked electronically.
 to the east is a wall.
 *
-you are on the driveway. the gate to the outside
-is to the east, but is locked electronically.
 to the east is a wall.
 *
-to the east is a wall.
+you're on the lawn of the mansion.
+*
+you are at the se corner of the house.
+*
+muffled sounds can be heard from inside.
+you are outside a large door in the front of an old mansion.
+*
+'knock! knock!'
+the door creaks open.
+a voice from within says: 'welcome, lover.'
+*
+some noise is coming from the hall.
+you feel a chill run down your spine, and you doubt your own sanity.
+
+a booming voice proclaims:
+'you won't get out by a door.'
+'... at least alive!'
+
+the house is very damp and musty.
+you are inside of the house in the inner foyer.
+there is a walk-in closet to the west, an entrance to a hall to the north.
+there is a bowl of candy on the ground.
+*
+weird noises are coming from above.
+there is an old style chair on the ground.
+you are in the main hall.
+the foyer is south.
+the hall extends west and darkens.
+a large room is to the east.
+*
+you are in the library. all the walls are lined with books.
+there is a bust of homer within reach.
+*
+the bust is too heavy to carry.
+i can't get bust
+we are at an intersection of two streets going n-s and e-w.
+there is a bus stop here.
+to the west a bus is pulling away from the next bus stop.
+*
+what?
 *
 the party's over.
 your final score is 0
