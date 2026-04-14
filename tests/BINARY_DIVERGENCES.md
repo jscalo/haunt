@@ -49,6 +49,59 @@ Transcripts from each probe are in `tests/transcripts/`.
 
 ---
 
+## Inner estate — geometry & landmarks
+
+Post-entry driveway is our port's `lawn side=in east=8 north=5`. From there, walking the binary maps to:
+
+| Binary description                                     | Our port coord (side=in) |
+|--------------------------------------------------------|--------------------------|
+| "You are on the driveway. Gate to east is locked."     | `(8, 5)`                 |
+| "There is a garage to the west." (directly N of drive) | `(8, 6)`                 |
+| "East is a wall." (further N)                          | `(8, 7)`                 |
+| "Garage to south. You're on the lawn of the mansion."  | `(7, 7)`                 |
+| "Lawn of the mansion." (multiple tiles W)              | `(6, 7)` … `(4, 7)`      |
+| "North-west corner of the house."                      | `(4, 6)`                 |
+| "West side of the house." (house E-blocked)            | `(4, 5)`                 |
+| "SW corner of the house."                              | `(4, 4)`                 |
+| "Large door in the front of the mansion."              | `(5, 4)` ← `knock` here  |
+| "SE corner of the house."                              | `(6, 4)`                 |
+| "NE corner of the mansion." (garage-side)              | `(7, 6)`                 |
+| "Ivy on the walls of the house. North side."           | `(5, 6)` or `(6, 6)`     |
+| "Inside of the north border of a wall."                | `north = 8`              |
+| "A wall is to the south." (inner south border)         | `north = 1`              |
+
+**Key insight**: our port's inner-lawn coordinates already line up with the binary. The main difference is that binary tiles have named, distinctive descriptions ("NE corner", "west side", "garage to the south") whereas our port shows generic grid text.
+
+**Ivy-wall authenticity**: ivy is on the NORTH wall of the mansion in the binary, accessed from inside the inner lawn — not on the outer perimeter wall as I first suspected. Our port's ivy-climb-to-balcony at `(5,6) → balcony` is therefore faithful.
+
+---
+
+## Truncated-region treasures (chest, coins, diamonds)
+
+These live in regions whose full rule set is in the portion of the OPS4 source that was never ported to OPS5. Source fragments that DO exist:
+
+- **chest** — `^place ocean ^south 2 ^east 2 ^up 1`. Ocean is 3-axis (south/east/up) so diving is involved.
+- **coins** — `^place bathysphere`. Bathysphere is a location with `portal wdoor` (airlock door) and a `rope`.
+- **diamonds** — `^place cave`. Cave is mentioned only in the initial make — no movement rules visible.
+- **wetsuit** — `^place closet` (closet is reachable). Rule at line 3244 accepts `put on wetsuit`; line 3254 writes "You are wearing a wetsuit."
+- **speargun** — `^place bathysphere ^state loaded`. Rules for `shoot speargun` visible; backlash snaps neck (line 3294).
+- **conch** — a shell. `listen conch` says *"You hear the ocean 'rumble'."* (line 2792)
+- **rope** — `^tied noose` initial. Rule name370: `pull rope` at bathysphere with rope tied to something in ocean + wdoor closed → "The airlock door is closed on the rope."
+- **wdoor** portal — airlock between bathysphere and ocean.
+
+The intended flow appears to be (inference):
+1. Find bathysphere location somewhere inside the house.
+2. Get wetsuit from closet.
+3. Enter bathysphere, wear wetsuit.
+4. Open wdoor and enter ocean (3D).
+5. Navigate to chest at `(S2, E2, U1)`.
+6. Find cave from ocean for diamonds.
+7. Return to bathysphere via rope pull.
+
+**Next exploration**: need to find the bathysphere entry point inside the mansion (probably a room we haven't mapped) via binary probe, then the ocean navigation grammar.
+
+---
+
 ## Confirmed matches (no divergence found)
 
 - **Intro text / bus boarding**: Identical to our port through the bus ride's "Va Vooooom!" narration.
