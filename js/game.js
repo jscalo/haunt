@@ -509,6 +509,37 @@ export function patchRules(rt) {
             },
         },
         {
+            name: "patch_fill_bathroom",
+            priority: 0,
+            sourceIndex: -3,
+            conditions: [
+                { cls: "input", isPositional: true, prefixLength: 2, negated: false,
+                  tests: [
+                      { index: 0, op: "eq_const", value: "fill" },
+                      { index: 1, op: "eq_const", value: "bottle" },
+                      { index: 0, op: "eq_var", var: "_fill" },
+                      { index: 1, op: "eq_var", var: "_bottle" },
+                  ] },
+                { cls: "object", isPositional: false, prefixLength: null, negated: false,
+                  tests: [
+                      { field: "name", op: "eq_const", value: "bottle" },
+                      { field: "place", op: "eq_const", value: "held" },
+                      { field: "name", op: "eq_var", var: "_bname" },
+                  ] },
+                { cls: "location", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "name", op: "eq_const", value: "bathroom" }] },
+                { cls: "place", isPositional: false, prefixLength: null, negated: false,
+                  tests: [{ field: "name", op: "eq_const", value: "bathroom" }] },
+                { cls: "object", isPositional: false, prefixLength: null, negated: true,
+                  tests: [{ field: "inside", op: "eq_const", value: "bottle" }] },
+            ],
+            action: async (m, wm, term) => {
+                rt.remove(m.$1);
+                rt.make("object", { name: "bathwater", inside: "bottle" });
+                rt.write("\n", "The bottle is full of bathwater.");
+            },
+        },
+        {
             name: "patch_wine_cellar_desc",
             priority: 0,
             sourceIndex: nextIdx + 3,
