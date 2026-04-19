@@ -2,12 +2,12 @@
 //
 // Working memory is sharded by class. Rules have conditions (data) and
 // an action closure (codegen output). Matching is backtracking depth-first
-// over the conditions. Conflict resolution is MEA:
+// over the conditions. Conflict resolution is MEA (see _findBest for the
+// full ladder and rationale):
 //
-//     1. Highest salience (priority, the OPS5 `x` value) wins.
-//     2. Tiebreak: highest max WME timestamp among matched WMEs (recency).
-//     3. Tiebreak: more tests in the rule = more specific.
-//     4. Tiebreak: lower rule source index.
+//     1. Highest salience (explicit `priority` field) wins.
+//     2. Dominant-stamp tiebreak (x-first uses x stamp; non-x uses max-stamp).
+//     3. Specificity, then LEX of remaining stamps, then source order.
 //
 // Refraction: each rule instantiation fires at most once per set of matched
 // (id, stamp) pairs. Modifying a WME bumps its stamp, so the old refraction
@@ -106,15 +106,36 @@ export class Engine {
     }
 
     _findBest() {
-        // MEA conflict resolution (OPS5):
-        //   1. Higher explicit priority wins (from (x N) in Haunt's source).
-        //   2. Then the Means-Ends tiebreak: higher stamp on the FIRST matched
-        //      WME (condition 1) wins. This is what lets name013's trick of
-        //      making x=0..60 in order give different rule tiers.
-        //   3. Then LEX on the remaining stamps, sorted desc: wme list with a
-        //      higher stamp at the first differing sorted position wins.
-        //   4. Then specificity: more condition tests wins.
+        // MEA conflict resolution (OPS5 variant — HAUNT-tuned):
+        //   1. Higher explicit priority wins (patches set this explicitly;
+        //      generated rules all have priority 0).
+        //   2. Dominant-stamp tiebreak:
+        //      - If first condition binds an `x` WME → dominant stamp is the
+        //        x stamp (preserves HAUNT's `x=0..60` rule-tier ordering).
+        //      - Otherwise → dominant stamp is the max over all matched WMEs
+        //        (MEA-style recency; keeps input-first and location-first
+        //        rules responsive to fresh commands).
+        //      Higher dominant stamp wins.
+        //   3. Then specificity: more condition tests wins.
+        //   4. Then LEX on the remaining stamps, sorted desc.
         //   5. Then source order: lower rule index wins.
+        //
+        // History: three alternatives were tried and rejected:
+        //   - Strict OPS5 MEA (firstStamp = first cond's stamp, no max boost):
+        //     starves correct input-first rules in the intro and throughout.
+        //     Broke 17/23 walkthroughs.
+        //   - OPS4 LEX (sort all stamps desc, compare lexicographically):
+        //     breaks 23/23 — intro bus sequence fails on cycle 0.
+        //   - Specificity-first (prefer more specific regardless of stamps):
+        //     breaks 23/23 — generic fallbacks like "you can't go that way"
+        //     lose when they should win.
+        // See tools/audit-conflict-resolution.mjs for a per-cycle comparison.
+        // ~500 "suspicious starvations" are flagged by the audit but most are
+        // false positives — cases where the current behavior is actually
+        // faithful to the binary. True divergences are handled case-by-case
+        // via priority-overridden patches in js/game.js (see patch_fountain_fill,
+        // patch_smoke_marijuana_*, patch_follow_wire_* as the established
+        // pattern).
         let best = null;
         let bestKey = null;
         for (const rule of this.rules) {
@@ -251,25 +272,36 @@ function cmpKey(a, b) {
     return 0;
 }
 
+// Conflict resolution mode:
+//   "mea"  — original: priority → firstStamp → specificity → rest → source.
+//             Starves high-spec x-first rules when a non-x rule matches a
+//             fresh WME (the name225 fountain bug). Kept for fallback.
+//   "lex"  — experimental OPS4-style LEX variant. Not currently matching
+//             binary behavior for all cases.
+const RESOLVER = (typeof process !== "undefined" && process.env && process.env.HAUNT_RESOLVER) || "mea";
+
 function compareInst(a, b) {
-    // MEA conflict resolution:
-    //   1. Explicit rule priority (higher wins). Used by the generator to lift
-    //      pure location-description rules above item-display rules that would
-    //      otherwise tie on recency.
-    //   2. First-condition recency (higher stamp wins). This implements x-tier
-    //      priority (x=60 > ... > x=0) AND ensures recent-context rules fire first.
-    //   3. Specificity: more condition tests wins.
-    //   4. LEX on remaining stamps.
-    //   5. Source order (lower wins).
     if (a.priority !== b.priority) return b.priority - a.priority;
-    if (a.firstStamp !== b.firstStamp) return b.firstStamp - a.firstStamp;
-    if (a.specificity !== b.specificity) return b.specificity - a.specificity;
-    const len = Math.max(a.rest.length, b.rest.length);
-    for (let i = 0; i < len; i++) {
-        const x = a.rest[i] ?? 0;
-        const y = b.rest[i] ?? 0;
-        if (x !== y) return y - x;
+    if (RESOLVER === "mea") {
+        if (a.firstStamp !== b.firstStamp) return b.firstStamp - a.firstStamp;
+        if (a.specificity !== b.specificity) return b.specificity - a.specificity;
+        const len = Math.max(a.rest.length, b.rest.length);
+        for (let i = 0; i < len; i++) {
+            const x = a.rest[i] ?? 0;
+            const y = b.rest[i] ?? 0;
+            if (x !== y) return y - x;
+        }
+        return a.sourceIndex - b.sourceIndex;
     }
+    // LEX: sort all matched stamps descending, compare lexicographically.
+    const aLex = [a.firstStamp, ...a.rest].sort((x, y) => y - x);
+    const bLex = [b.firstStamp, ...b.rest].sort((x, y) => y - x);
+    const minLen = Math.min(aLex.length, bLex.length);
+    for (let i = 0; i < minLen; i++) {
+        if (aLex[i] !== bLex[i]) return bLex[i] - aLex[i];
+    }
+    if (aLex.length !== bLex.length) return aLex.length - bLex.length;
+    if (a.specificity !== b.specificity) return b.specificity - a.specificity;
     return a.sourceIndex - b.sourceIndex;
 }
 

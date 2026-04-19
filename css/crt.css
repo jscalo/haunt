@@ -210,6 +210,10 @@ body.no-flicker .screen {
     margin: 0;
 }
 
+.prompt-line[hidden] {
+    display: none;
+}
+
 .prompt-mark {
     margin-right: 0.35em;
 }

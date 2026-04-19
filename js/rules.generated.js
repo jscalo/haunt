@@ -2,6 +2,16 @@
 // Do not edit by hand.
 
 export function createRules(rt, engine) {
+    const _badInputPool = [
+        "That does not compute.", "Try something different.",
+        "Try something else.", "That's easy for you to say.",
+        "Yo no comprendo.", "I don't understand that.",
+        "No way buster.", "I don't grok that.",
+        "That's a bit over my head.", "Huh?",
+        "Ich verstehe nicht.", "Was that in Greek?",
+        "Stop mumbling.",
+    ];
+    let _badInputIdx = 0;
     return [
         {
             name: "name01",
@@ -30,7 +40,8 @@ export function createRules(rt, engine) {
             sourceIndex: 2,
             conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":0}]},{"cls":"current","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"type","op":"eq_const","value":"operator"},{"field":"name","op":"eq_const","value":"process"}]},{"cls":"input","isPositional":true,"prefixLength":0,"negated":false,"tests":[]}],
             action: async (m, wm, term) => {
-                rt.write("\n", "What?");
+                rt.write("\n", _badInputPool[_badInputIdx % _badInputPool.length]);
+                _badInputIdx++;
             rt.remove(m.$3);
             rt.modify(m.$2, { "name": "read" });
             },
@@ -75,7 +86,7 @@ export function createRules(rt, engine) {
             action: async (m, wm, term) => {
                 rt.write("\n", "This is HAUNT.  Version 4.6");
             rt.write("\n", "See NEWS for news.");
-            rt.write("\n", "Have you played before?", "\n", "*");
+            rt.write("\n", "Have you played before?[yes]", "\n", "*");
             rt.make("input", [(await rt.term.readToken()).toLowerCase()].flat());
             rt.write("\n", " ");
             },
@@ -97,13 +108,13 @@ export function createRules(rt, engine) {
             action: async (m, wm, term) => {
                 rt.remove(m.$3);
             rt.modify(m.$2, { "name": "read" });
-            rt.write("\n", "Welcome novice.  You are playing one of the world's largest");
-            rt.write("\n", "production systems.  The purpose of this game is to find");
+            rt.write("\n", "Welcome novice.  You are playing on one of the world's largest production");
+            rt.write("\n", "systems.  The purpose of this game is to find");
             rt.write("\n", "treasure in a haunted house and then escape from the house.");
             rt.write("\n", " ");
             rt.write("\n", "The program will give descriptions of locations and accept");
             rt.write("\n", "commands to perform actions.");
-            rt.write("\n", "Give it directives with simple 1-5 word commands.");
+            rt.write("\n", "Give it directives on what to do with simple 1-5 word commands");
             rt.write("\n", "Its knowledge of English is limited but imaginative.");
             rt.write("\n", "The directions are north, south, east, west,");
             rt.write("\n", "up and down.  Directions can be one letter (n,s,e,w,u,d).");
@@ -118,17 +129,17 @@ export function createRules(rt, engine) {
             rt.write("\n", "                  LOOK describes your current position.");
             rt.write("\n", "                  NEWS describes new features.");
             rt.write("\n", " ");
-            rt.write("\n", "*************************************************************");
+            rt.write("\n", "*******************************************************************");
             rt.write("\n", "You get 15 points for finding a treasure and 5 points for");
             rt.write("\n", "getting it to the lawn outside the house.  You get an extra");
             rt.write("\n", "bonus of 20 points for getting your body off the estate.");
             rt.write("\n", "The maximum number of points is 440");
             rt.write("\n", "Good luck, you'll need it.  Ask for help if you want.");
-            rt.write("\n", "*************************************************************");
-            rt.write("\n", "Copyright (C) 1979, 1980, 1981, 1982, 1983 John Laird");
-            rt.write("\n", "*************************************************************");
+            rt.write("\n", "*******************************************************************");
+            rt.write("\n", "Copyright (C) 1979, 1980, 1981, 1982 John Laird");
+            rt.write("\n", "*******************************************************************");
             rt.write("\n", " ");
-            rt.write("\n", "On with the adventure!!");
+            rt.write("\n", "On with the adventure!!!");
             rt.write("\n", " ");
             rt.write("\n", " ");
             rt.write("\n", " ");
@@ -141,13 +152,13 @@ export function createRules(rt, engine) {
             rt.write("\n", " ");
             rt.write("\n", "Along time ago, a young couple was picnicing near the woods");
             rt.write("\n", "on the outskirts of town.  They were celebrating the birth");
-            rt.write("\n", "of their first child.  Unfortunately, a crazed moose");
-            rt.write("\n", "inhabited that area and attacked them.  The child and husband");
-            rt.write("\n", "were unharmed, but the wife was gored to death by the moose.");
+            rt.write("\n", "of their first child.  Unfortunately, a crazed moose inhabited that");
+            rt.write("\n", "area and attacked them.  The child and husband were");
+            rt.write("\n", "unharmed, but the wife was gored to death by the moose.");
             rt.write("\n", " ");
             rt.write("\n", "After the funeral, the man bought the land where the incident occurred");
-            rt.write("\n", "and constructed a large mansion: CHEZ MOOSE.  He filled it");
-            rt.write("\n", "with the treasures of his family and claimed that his wife's");
+            rt.write("\n", "and constructed a large mansion: CHEZ MOOSE.  He filled it with");
+            rt.write("\n", "the treasures of his family and claimed that his wife's");
             rt.write("\n", "soul was still in the area.  He vowed to remain in the");
             rt.write("\n", "mansion until he had returned her soul to human flesh.");
             rt.write("\n", "He tried to bridge the gap between life and death to reclaim her.");
@@ -169,8 +180,8 @@ export function createRules(rt, engine) {
             rt.write("\n", "An obscure hereditary disease, Orkhisnoires sakioannes,");
             rt.write("\n", "is supposed to play some part in this.");
             rt.write("\n", " ");
-            rt.write("\n", "So if your heritage is in doubt, you may be the descendant");
-            rt.write("\n", "that can claim the treasure in the mansion.");
+            rt.write("\n", "So if your heritage is in doubt, you may be the descendant that");
+            rt.write("\n", "can claim the treasure in the mansion.");
             rt.write("\n", "Many people, claiming to be descendants have died trying...");
             rt.write("\n", " or at least never returned.");
             rt.write("\n", " ");
@@ -320,7 +331,7 @@ export function createRules(rt, engine) {
             sourceIndex: 16,
             conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":50}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"visited","op":"eq_const","value":"t"}]}],
             action: async (m, wm, term) => {
-                rt.write("\n", "You are in", m.x, ".");
+                rt.write("\n", "You are in", m.x.replace(/_/g, " "), ".");
             },
         },
         {
@@ -1168,7 +1179,8 @@ export function createRules(rt, engine) {
             action: async (m, wm, term) => {
                 rt.modify(m.$2, { "score": rt.compute(m.Q, "-", 20), "died": "t" });
             rt.write("\n", "Hmm...  you went and got yourself killed.");
-            rt.write("\n", "But I'll let you play a bit longer.");
+            rt.write("\n", "But before the last neuron in your brain was destroyed, a");
+            rt.write("\n", "10th level Bus driver came by and conjured up a Lazurus spell!!!");
             },
         },
         {
@@ -1364,7 +1376,7 @@ export function createRules(rt, engine) {
             sourceIndex: 120,
             conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":20}]},{"cls":"history","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"hungry","op":"eq_const","value":"t"}]}],
             action: async (m, wm, term) => {
-                rt.modify(m.$1, { "hungry": null });
+                rt.modify(m.$2, { "hungry": null });
             },
         },
         {
@@ -1461,8 +1473,8 @@ export function createRules(rt, engine) {
             action: async (m, wm, term) => {
                 rt.remove(m.$3);
             rt.remove(m.$4);
-            rt.write("\n", "That was sweet.");
-            rt.write("\n", "This kitchen is real deary.  A bad place to take acid.");
+            rt.write("\n", "That was sweet!");
+            rt.write("\n", "This kitchen is a real deary PLACE!!  A bad PLACE to take acid.");
             rt.write("\n", "You have to get out of here!!");
             rt.write("\n", "You feel on fire, you need water to cool off.");
             rt.make("input", ["w", "then", "push", "button", "then", "n", "then", "push", "b", "then", "exit", "then", "push", "red", "button"].flat());
@@ -1773,7 +1785,7 @@ export function createRules(rt, engine) {
             conditions: [{"cls":"x","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":30}]},{"cls":"input","isPositional":true,"prefixLength":1,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"open"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$2);
-            rt.write("\n", "I don't see anything that is closed.");
+            rt.write("\n", "If there is a secret panel near-by, this is not the way to open it.");
             },
         },
         {
@@ -2973,18 +2985,18 @@ export function createRules(rt, engine) {
             conditions: [{"cls":"time","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"midnight","op":"eq_const","value":"t"}]}],
             action: async (m, wm, term) => {
                 rt.modify(m.$1, { "midnight": null });
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
             rt.write("\n", "A moose comes running out of a wall at full speed straight at you!!!");
             rt.write("\n", "He is right on top of you!!! He runs right through you and disappears.");
             },
@@ -2996,18 +3008,18 @@ export function createRules(rt, engine) {
             conditions: [{"cls":"time","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"midnight","op":"eq_const","value":"t"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"}]}],
             action: async (m, wm, term) => {
                 rt.modify(m.$1, { "midnight": null });
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
             rt.write("\n", "A moose comes running across the lawn at full speed straight at you!!!");
             rt.write("\n", "He is right on top of you.  He runs right through you and disappears.");
             },
@@ -3019,18 +3031,18 @@ export function createRules(rt, engine) {
             conditions: [{"cls":"time","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"midnight","op":"eq_const","value":"t"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"underwater","op":"eq_const","value":"t"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$1);
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
-            rt.write("\n", "BonG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
+            rt.write("\n", "BONG!");
             rt.write("\n", "A moose comes swimming out of the darkness, at full speed straight at you.");
             rt.write("\n", "He has on full scuba gear, and is really moving.");
             rt.write("\n", "He is right on top of you.  He runs right through you and disappears.");
@@ -3176,7 +3188,7 @@ export function createRules(rt, engine) {
             sourceIndex: 292,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"gold"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
-                rt.write("\n", "There is gold here.");
+                rt.write("\n", "There is gold here!!!!");
             },
         },
         {
@@ -3447,7 +3459,7 @@ export function createRules(rt, engine) {
             conditions: [{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"conch"},{"field":"place","op":"eq_const","value":"held"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"blow"},{"index":1,"op":"eq_const","value":"conch"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$2);
-            rt.write("\n", "'Hoooonk!'");
+            rt.write("\n", "'Hoooonk!!'");
             },
         },
         {
@@ -3684,7 +3696,7 @@ export function createRules(rt, engine) {
             sourceIndex: 343,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"pearls"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
-                rt.write("\n", "There are huge pearls here!!");
+                rt.write("\n", "There are huge pearls here!!!");
             },
         },
         {
@@ -4073,7 +4085,7 @@ export function createRules(rt, engine) {
             sourceIndex: 382,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"wetsuit"},{"field":"place","op":"eq_var","var":"x"},{"field":"side","op":"eq_var","var":"__pos_side_x","implicit":true},{"field":"east","op":"eq_var","var":"__pos_east_x","implicit":true},{"field":"north","op":"eq_var","var":"__pos_north_x","implicit":true}]}],
             action: async (m, wm, term) => {
-                rt.write("\n", "There is a wetsuit, with everything needed to survive (location ^underwater t).");
+                rt.write("\n", "There is a wetsuit, with everything needed to survive underwater.");
             },
         },
         {
@@ -4165,7 +4177,7 @@ export function createRules(rt, engine) {
             conditions: [{"cls":"object","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"speargun"},{"field":"place","op":"eq_const","value":"held"},{"field":"state","op":"eq_const","value":"unloaded"}]},{"cls":"input","isPositional":true,"prefixLength":2,"negated":false,"tests":[{"index":0,"op":"eq_const","value":"shoot"},{"index":1,"op":"eq_const","value":"speargun"}]}],
             action: async (m, wm, term) => {
                 rt.remove(m.$2);
-            rt.write("\n", "The gun isn't loaded with a spear!");
+            rt.write("\n", "The gun isn't loaded with a spear!!");
             },
         },
         {
@@ -5018,7 +5030,7 @@ export function createRules(rt, engine) {
             sourceIndex: 475,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"north","op":"eq_const","value":8}]}],
             action: async (m, wm, term) => {
-                rt.write("\n", "You're on the inside of north border of a wall.");
+                rt.write("\n", "You're on the inside of the north border of a wall.");
             },
         },
         {
@@ -6254,7 +6266,7 @@ export function createRules(rt, engine) {
             rt.write("\n", "The ivy allows you to get a grip.  You climb up the wall.");
             rt.write("\n", "The ivy starts to thin out and you haven't found anywhere to stop.");
             rt.write("\n", "To the right you spy a balcony.  Using your great skill as a");
-            rt.write("\n", "world class haunted house climber, you jump to the balcony.");
+            rt.write("\n", "world class haunted house climber, you JRST over to the balcony.");
             },
         },
         {
@@ -6268,7 +6280,7 @@ export function createRules(rt, engine) {
             rt.write("\n", "The ivy allows you to get a grip.  You climb up the wall.");
             rt.write("\n", "The ivy starts to thin out and you haven't found anywhere to stop.");
             rt.write("\n", "To the right you spy a balcony.  Using your great skill as a");
-            rt.write("\n", "world class haunted house climber, you jump to the balcony.");
+            rt.write("\n", "world class haunted house climber, you JRST over to the balcony.");
             },
         },
         {
@@ -6644,7 +6656,7 @@ export function createRules(rt, engine) {
         },
         {
             name: "name1236",
-            priority: 1,
+            priority: 0,
             sourceIndex: 633,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"bedroom"}]},{"cls":"object","isPositional":false,"prefixLength":null,"negated":true,"tests":[{"field":"name","op":"eq_const","value":"mirror"},{"field":"state","op":"eq_const","value":"broke"}]}],
             action: async (m, wm, term) => {
@@ -6863,7 +6875,7 @@ export function createRules(rt, engine) {
             action: async (m, wm, term) => {
                 rt.remove(m.$1);
             rt.modify(m.$2, { "siton": "toilet" });
-            rt.write("\n", "Sitting on a toilet is lots of fun!");
+            rt.write("\n", "Sitting on a toilet is lots of fun!!");
             },
         },
         {
@@ -6886,7 +6898,7 @@ export function createRules(rt, engine) {
                 rt.remove(m.$2);
             rt.modify(m.$3, { "die": "t" });
             rt.write("\n", "When you flush the toilet it spins around, knocking you off your feet!");
-            rt.write("\n", "You crack your head on the bathtub and die!!");
+            rt.write("\n", "You crack your head on the bathtub and die!!!");
             },
         },
         {
@@ -7074,7 +7086,7 @@ export function createRules(rt, engine) {
             rt.write("\n", "The water is nice and warm.  Too bad I don't have a rubber duckie!");
             rt.write("\n", "Well let's use the soap to get clean.");
             rt.write("\n", "There is so much dirt here it takes alot of soap.");
-            rt.write("\n", "As the soap wears away, we are left with a GEM!!.");
+            rt.write("\n", "As the soap wears away, we are left with a GEM!!!.");
             rt.make("object", { "name": "gem", "place": "held", "treasure": "t" });
             },
         },
@@ -7106,7 +7118,7 @@ export function createRules(rt, engine) {
             action: async (m, wm, term) => {
                 rt.remove(m.$2);
             rt.remove(m.$3);
-            rt.write("\n", "The soap dissolves and a gem remains!");
+            rt.write("\n", "The soap dissolves in the water!!");
             rt.make("object", { "name": "gem", "place": "bathroom", "treasure": "t" });
             },
         },
@@ -7463,7 +7475,7 @@ export function createRules(rt, engine) {
             sourceIndex: 711,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"lawn"},{"field":"side","op":"eq_const","value":"in"},{"field":"east","op":"eq_const","value":5},{"field":"north","op":"eq_const","value":4}]},{"cls":"status","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"sound","op":"eq_const","value":"on"}]}],
             action: async (m, wm, term) => {
-                rt.write("\n", "Muffled sounds can be heard from inside.");
+                rt.write("\n", "Muffled sounds can be heard inside.");
             },
         },
         {
@@ -7472,7 +7484,7 @@ export function createRules(rt, engine) {
             sourceIndex: 712,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"foyer"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"foyer"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
-                rt.write("\n", "You are inside of the house in the inner foyer.");
+                rt.write("\n", "You are inside the house in the inner foyer.");
             rt.write("\n", "There is a walk-in closet to the west, an entrance to a hall to the north.");
             },
         },
@@ -8057,7 +8069,7 @@ export function createRules(rt, engine) {
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stairs_debris"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"stairs_debris"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "You are on wreckage of the stairs.");
-            rt.write("\n", "To the south is the main_hall, north is a small opening.");
+            rt.write("\n", "To the south is the main hall, north is a small opening.");
             },
         },
         {
@@ -8271,7 +8283,7 @@ export function createRules(rt, engine) {
             name: "name2092",
             priority: 1,
             sourceIndex: 788,
-            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"dining_room"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"dining"},{"field":"visited","op":"eq_const","value":"nil"}]}],
+            conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"dining_room"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"dining_room"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
                 rt.write("\n", "You are in a large dining room.  The ceiling is very high.");
             rt.write("\n", "The hall is east.");
@@ -8389,7 +8401,7 @@ export function createRules(rt, engine) {
             action: async (m, wm, term) => {
                 rt.remove(m.$2);
             rt.modify(m.$3, { "door": "closed" });
-            rt.write("\n", "The wall closes.");
+            rt.write("\n", "The wall closes and locks.");
             },
         },
         {
@@ -8418,7 +8430,7 @@ export function createRules(rt, engine) {
             sourceIndex: 801,
             conditions: [{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"laboratory"}]},{"cls":"location","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"laboratory"}]},{"cls":"place","isPositional":false,"prefixLength":null,"negated":false,"tests":[{"field":"name","op":"eq_const","value":"laboratory"},{"field":"visited","op":"eq_const","value":"nil"}]}],
             action: async (m, wm, term) => {
-                rt.write("\n", "You are in the laboratory.  The most notable feature is a huge ");
+                rt.write("\n", "You are in the Laboratory.  The most notable feature is a huge ");
             rt.write("\n", "slab in the middle of the room.  There is a large ");
             rt.write("\n", "lever switch.  The stairs are the only obvious exit.  The ceiling");
             rt.write("\n", "is a glass dome painted black, much too high to reach.");

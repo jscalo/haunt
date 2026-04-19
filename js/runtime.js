@@ -9,6 +9,7 @@ export class Runtime {
         this.wm = wm;
         this.term = term;
         this.lineBuffer = "";
+        term._runtime = this;
     }
 
     // ---- write / crlf ----

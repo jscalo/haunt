@@ -187,6 +187,7 @@ export class Terminal {
     }
 
     async readLine() {
+        if (this._runtime) this._runtime.lineBuffer = "";
         await this._flushQueue();
         this.pendingMode = "line";
         this.showPrompt();
